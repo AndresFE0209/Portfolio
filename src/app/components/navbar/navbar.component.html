@@ -1,0 +1,41 @@
+<mat-toolbar class="navbar">
+    <span class="marca">Mi Portfolio</span>
+    <span class="espaciador"></span>
+
+    <a
+        class="btn-nav"
+        mat-button
+        routerLink="/home"
+        routerLinkActive="active"
+        [routerLinkActiveOptions]="{ exact: true }"
+        (mouseenter)="zoomHover($event)"
+        (mouseleave)="zoomOut($event)"
+        (click)="zoomClick($event)"
+    >
+        Inicio
+    </a>
+
+    <a
+        class="btn-nav"
+        mat-button
+        routerLink="/about"
+        routerLinkActive="active"
+        (mouseenter)="zoomHover($event)"
+        (mouseleave)="zoomOut($event)"
+        (click)="zoomClick($event)"
+    >
+        Sobre mi
+    </a>
+
+    <a
+        class="btn-nav"
+        mat-button
+        routerLink="/contact"
+        routerLinkActive="active"
+        (mouseenter)="zoomHover($event)"
+        (mouseleave)="zoomOut($event)"
+        (click)="zoomClick($event)"
+    >
+        Contacto
+    </a>
+</mat-toolbar>

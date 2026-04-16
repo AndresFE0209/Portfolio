@@ -1,0 +1,63 @@
+.home-gamer {
+    padding: 24px;
+    min-height: 70vh;
+    color: #f5ead7;
+    background:
+        radial-gradient(circle at 20% 10%, #3a2f1e 0%, transparent 35%),
+        radial-gradient(circle at 80% 20%, #1f3a2d 0%, transparent 35%),
+        linear-gradient(180deg, #14100b 0%, #1b1611 100%);
+}
+
+.cabecera{
+    text-align: center;
+    max-width: 900px;
+    margin: 0 auto 80px auto;
+}
+
+h1 {
+    margin: 0;
+    color: #e8d1a5;
+    letter-spacing: 1px;
+    font-size: 44px;
+}
+
+.rol {
+    color: #9fcf9f;
+    font-weight: 700;
+    font-size: 20px;
+    margin-top: 10px;
+}
+
+.texto {
+    color: #e7dcc7;
+    line-height: 1.6;
+    font-size: 18px;
+    margin-top: 16px;
+}
+
+.panel {
+    margin-top: 48px;
+    padding: 18px;
+    border-radius: 12px;
+    border: 1px solid #6b5a3b;
+    background-color: #201910;
+}
+
+.panel h2 {
+    color: #d8b46a;
+    font-size: 38px;
+    margin: 0 0 16px 0;
+    text-align: center;
+}
+
+.grid-stack {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 12px;
+}
+
+
+::ng-deep app-card img {
+    width: 72px !important;
+    height: 72px !important;
+}

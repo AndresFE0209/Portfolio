@@ -1,0 +1,25 @@
+<section class="home-gamer">
+    <div class="cabecera">
+        <h1>Andres Fernandez Exposito</h1>
+        <p class="rol">FullStack Developer en formacion</p>
+        <br>
+        <p class="texto">
+        Bienvenido a mi portfolio. 
+        Soy estudiante de DAM y estoy en prácticas en Plexus Tech, 
+        mejorando mis habilidades poco a poco para seguir avanzando como desarrollador fullstack.
+        </p>
+    </div>
+
+    <div class="panel">
+        <h2>Stack</h2>
+        <div class="grid-stack">
+            @for (tecnologia of tecnologias; track tecnologia.nombre) {
+                <app-card class="card-item"
+                [nombre]="tecnologia.nombre"
+                [imagen]="tecnologia.imagen"
+                [enlace]="tecnologia.enlace">
+                </app-card>
+            }
+        </div>
+    </div>
+</section>
