@@ -1,37 +1,44 @@
 <section class="about">
-    <div class="cabecera">
-        <h1>Sobre Mi</h1>
-        <p>
-        Soy Andres Fernandez Exposito, estudiante de DAM y actualmente en practicas en Plexus Tech.
-        Mi objetivo es crecer como desarrollador fullstack.
-        </p>
-    </div>
+    <table class="presentacion">
+        <tr>
+            <td class="texto-presentacion">
+                <h1>Sobre Mi</h1>
+                <p>
+                    Soy Andres Fernandez Exposito, estudiante de DAM y actualmente en practicas en Plexus Tech.
+                    Mi objetivo es crecer como desarrollador fullstack.
+                </p>
+            </td>
 
-    <div class="tarjeta" (mousemove)="moverSello($event, selloHerramienta)" (click)="ponerSello(selloFinal)">
-        <div class="tarjeta-top">
-        <span>{{ datos.pais }}</span>
-        <span>ENTRY VISA</span>
-        </div>
+            <td class="columna-tarjeta">
+                <div class="tarjeta">
+                    <div class="tarjeta-top">
+                        <span>{{ datos.pais }}</span>
+                        <span>ENTRY VISA</span>
+                    </div>
 
-        <div class="tarjeta-body">
-        <div class="foto"></div>
+                    <div class="zona-sello-guia">
+                        <div class="caja-sello">ENTRY VISA</div>
+                    </div>
 
-        <div class="info">
-            <div class="info-linea"><span class="info-label">NAME:</span> {{ datos.nombre }}</div>
-            <div class="info-linea"><span class="info-label">ROLE:</span> {{ datos.rol }}</div>
-            <div class="info-linea"><span class="info-label">ID:</span> {{ datos.id }}</div>
-            <div class="info-linea"><span class="info-label">DOB:</span> {{ datos.nac }}</div>
-            <div class="info-linea"><span class="info-label">EXP:</span> {{ datos.exp }}</div>
-        </div>
-        </div>
+                    <div class="linea-separador"></div>
 
-        <div class="zona-sello">
-        <div #selloFinal class="sello-final">ENTRY VISA</div>
-        </div>
+                    <div class="tarjeta-body">
+                        <div class="foto-fake"></div>
 
-        <div #selloHerramienta class="sello-herramienta">
-        <div class="mango"></div>
-        <div class="base">ENTRY</div>
-        </div>
-    </div>
+                        <div class="info">
+                            <div class="linea"><span class="label">DOB:</span><span>{{ datos.nac }}</span></div>
+                            <div class="linea"><span class="label">SEX:</span><span>M</span></div>
+                            <div class="linea"><span class="label">ISS:</span><span>{{ datos.pais }}</span></div>
+                            <div class="linea"><span class="label">EXP:</span><span>{{ datos.exp }}</span></div>
+                            <div class="linea"><span class="label">NAME:</span><span>{{ datos.nombre }}</span></div>
+                        </div>
+                    </div>
+
+                    <div class="tarjeta-bottom">
+                        <span class="codigo">A8HFR-GAN5</span>
+                    </div>
+                </div>
+            </td>
+        </tr>
+    </table>
 </section>
