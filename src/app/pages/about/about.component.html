@@ -6,11 +6,32 @@
         Mi objetivo es crecer como desarrollador fullstack.
         </p>
     </div>
-    <div class="selector">
-        <mat-button-toggle-group [value]="seccionActiva", (change)="cambiarSeccion($event.value)">
-            <mat-button-toggle value="perfil">Perfil</mat-button-toggle>
-            <mat-button-toggle value="timeline">Timeline</mat-button-toggle>
-            <mat-button-toggle value="objetivo">Objetivo</mat-button-toggle>
-        </mat-button-toggle-group>
+
+    <div class="tarjeta" (mousemove)="moverSello($event, selloHerramienta)" (click)="ponerSello(selloFinal)">
+        <div class="tarjeta-top">
+        <span>{{ datos.pais }}</span>
+        <span>ENTRY VISA</span>
+        </div>
+
+        <div class="tarjeta-body">
+        <div class="foto"></div>
+
+        <div class="info">
+            <div class="info-linea"><span class="info-label">NAME:</span> {{ datos.nombre }}</div>
+            <div class="info-linea"><span class="info-label">ROLE:</span> {{ datos.rol }}</div>
+            <div class="info-linea"><span class="info-label">ID:</span> {{ datos.id }}</div>
+            <div class="info-linea"><span class="info-label">DOB:</span> {{ datos.nac }}</div>
+            <div class="info-linea"><span class="info-label">EXP:</span> {{ datos.exp }}</div>
+        </div>
+        </div>
+
+        <div class="zona-sello">
+        <div #selloFinal class="sello-final">ENTRY VISA</div>
+        </div>
+
+        <div #selloHerramienta class="sello-herramienta">
+        <div class="mango"></div>
+        <div class="base">ENTRY</div>
+        </div>
     </div>
 </section>

@@ -9,17 +9,39 @@ import { MatCardModule } from '@angular/material/card';
   styleUrl: './about.component.scss'
 })
 export class AboutComponent {
-  seccionActiva = signal('perfil');
+  selloPuesto = false;
 
-  timeline = [
-    { titulo: 'DAM', texto: 'Actualmente estudiando 2º de Desarrollo de Aplicaciones Multiplataformas'},
-    { titulo: 'Practicas en Plexus Tech', texto: 'Estoy mejorando cada semana en frontend y backend.' },
-    { titulo: 'Stack actual', texto: 'Angular, Spring Boot, Java y Supabase.' }
-  ];
+  datos= {
+    pais: 'ESPAÑA',
+    nombre: 'Andres Fernandez Exposito',
+    rol: 'FullStack Dev',
+    id: 'W2M-ANG-0825',
+    nac: '1991-09-02',
+    exp: '2026-03-23'
+  };
 
-  interes = ['Lectura', 'Videojuegos', 'Deportes', 'Puzzles']
-  
-  cambiarSeccion(seccion: string): void {
-    this.seccionActiva.set(seccion);
+  moverSello(event: MouseEvent, selloHerramienta: Element): void {
+    const tarjeta = event.currentTarget as Element;
+    const rect = tarjeta.getBoundingClientRect();
+
+    const x = event.clientX - rect.left - 30;
+    const y = event.clientY - rect.top - 55;
+
+    gsap.to(selloHerramienta, {
+      x,
+      y,
+      duration: 0.12,
+      ease: 'power1.out'
+    });
+  }
+
+  ponerSello(selloFinal: Element): void {
+    this.selloPuesto = false;
+
+    gsap.set(selloFinal, {
+      opacity: 0,
+      scale: 1.3,
+      rotate: -12
+    })
   }
 }

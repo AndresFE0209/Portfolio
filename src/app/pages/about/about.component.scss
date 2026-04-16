@@ -1,0 +1,121 @@
+.about {
+  padding: 24px;
+  color: #e6e6e6;
+}
+
+.cabecera {
+  margin-bottom: 16px;
+  max-width: 900px;
+}
+
+.tarjeta {
+    position: relative;
+    max-width: 700px;
+    margin: 0 auto;
+    border: 3px solid #5c4f4c;
+    background: #d8ccc2;
+    color: #2f2826;
+    user-select: none;
+    cursor: pointer;
+}
+
+.tarjeta-top {
+    display: flex;
+    justify-content: space-between;
+    padding: 10px 13px;
+    border-bottom: 2px solid #8f8079;
+    font-family: 'Courier New', monospace;
+    font-weight: 700;
+    text-transform: uppercase;
+}
+
+.tarjeta-body {
+    display: grid;
+    grid-template-columns: 140px 1fr;
+    gap: 13px;
+    padding: 13px;
+}
+
+.foto {
+    min-height: 140px;
+    border: 2px solid #8e817c;
+    background: #b8ada4;
+}
+
+.info {
+    font-family: 'Courier New', monospace;
+    font-size: 15px;
+}
+
+.info-linea {
+    margin-bottom: 6px;
+}
+
+.info-label {
+    display: inline-block;
+    min-width: 56px;
+    font-weight: 700;
+}
+
+.zona-sello {
+    position: relative;
+    min-height: 90px;
+    border-top: 2px solid #8f8079;
+}
+
+.sello-final {
+    position: absolute;
+    right: 16px;
+    bottom: 11px;
+    padding: 6px 13px;
+    border: 3px double #9b2c2c;
+    color: #9b2c2c;
+    font-family: 'Courier New', monospace;
+    font-weight: 700;
+    background: rgba(155, 44, 44, 0.08);
+    opacity: 0;
+    transform: scale(1.3) rotate(-12deg);
+}
+
+.sello-herramienta {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 70px;
+    pointer-events: none;
+}
+
+.mango {
+    width: 32px;
+    height: 34px;
+    margin: 0 auto;
+    border-radius: 8px;
+    background: #7f6042;
+    border: 2px solid #452f1d;
+}
+
+.base {
+    margin-top: -3px;
+    padding: 6px 0;
+    text-align: center;
+    font-size: 12px;
+    font-family: 'Courier New', monospace;
+    color: #d7e1ea;
+    background: #1f2d3a;
+    border: 2px solid #121b25;
+    border-radius: 4px;
+}
+
+.btn-reset {
+    margin-top: 16px;
+    padding: 7px 13px;
+    border: 1px solid #d9b67a;
+    background: transparent;
+    cursor: pointer;
+}
+
+@media (max-width: 700px) {
+    .tarjeta-body {
+        grid-template-columns: 1fr;
+    }
+}
