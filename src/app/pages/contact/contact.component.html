@@ -1,1 +1,82 @@
-<p>contact works!</p>
+<section class="contacto">
+    <div class="contacto-contenedor">
+        <header class="contacto-cabecera">
+            <h1>Feedback del Portfolio</h1>
+            <p>Deja tu comentario, sugerencia o idea para mejorar el proyecto.</p>
+        </header>
+
+        <form class="formulario-feedback" (ngSubmit)="enviarFormulario()">
+            <div class="rejilla-campos">
+                <div class="campo">
+                    <label for="nombre">Nombre</label>
+                    <input
+                        id="nombre"
+                        name="nombre"
+                        type="text"
+                        [(ngModel)]="nombre"
+                        placeholder="Tu nombre" />
+
+                    @if (mostrarErrores && nombre.trim() === '') {
+                        <small>El nombre no puede estar vacio.</small>
+                    }
+                </div>
+
+                <div class="campo">
+                    <label for="correo">Correo</label>
+                    <input
+                        id="correo"
+                        name="correo"
+                        type="email"
+                        [(ngModel)]="correo"
+                        placeholder="tu@email.com" />
+
+                    @if (mostrarErrores && correo.trim() === '') {
+                        <small>El correo no puede estar vacio.</small>
+                    }
+                </div>
+            </div>
+
+            <div class="campo">
+                <label for="categoria">Categoria</label>
+                <select id="categoria" name="categoria" [(ngModel)]="categoria">
+                    <option value="">Selecciona una categoria</option>
+                    @for (item of categorias; track item.valor) {
+                        <option [value]="item.valor">{{ item.etiqueta }}</option>
+                    }
+                </select>
+
+                @if (mostrarErrores && categoria === '') {
+                    <small>La categoria no puede estar vacia.</small>
+                }
+            </div>
+
+            <div class="campo">
+                <label for="mensaje">Mensaje</label>
+                <textarea
+                    id="mensaje"
+                    name="mensaje"
+                    rows="6"
+                    [(ngModel)]="mensaje"
+                    placeholder="Escribe aqui tu comentario..."></textarea>
+
+                @if (mostrarErrores && mensaje.trim() === '') {
+                    <small>El mensaje no puede estar vacio.</small>
+                }
+            </div>
+
+            <div class="acciones">
+                <button class="boton-enviar" type="submit" [disabled]="enviando">
+                    @if (!enviando) { Enviar feedback } @else { Enviando... }
+                </button>
+            </div>
+
+            @if (enviado) {
+                <p class="estado exito">Feedback enviado correctamente.</p>
+            }
+
+            @if (mensajeError) {
+                <p class="estado error">{{ mensajeError }}</p>
+            }
+        </form>
+    </div>
+</section>

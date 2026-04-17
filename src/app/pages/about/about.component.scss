@@ -54,17 +54,17 @@
 .tarjeta-top {
     display: flex;
     justify-content: space-between;
-    padding: 8px 10px;
+    padding: 14px 12px;
     border-bottom: 2px solid #8d837b;
     font-family: "Courier New", monospace;
-    font-size: 18px;
+    font-size: 19px;
     font-weight: 700;
     text-transform: uppercase;
-    letter-spacing: 1px;
+    letter-spacing: 0.6px;
 }
 
 .zona-sello-guia {
-    padding: 8px 10px;
+    padding: 14px 10px;
     border-bottom: 2px solid #8d837b;
     background: #ddd5cd;
     display: flex;
@@ -73,18 +73,130 @@
 }
 
 .caja-sello {
-    width: 150px;
-    height: 56px;
+    width: 190px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 8px;
+    background: transparent;
+    cursor: pointer;
+    user-select: none;
+    transition: filter 0.15s ease;
+    outline: none;
+}
+
+.caja-sello:hover {
+    filter: brightness(1.08);
+}
+
+.caja-sello:focus-visible {
+    box-shadow: 0 0 0 2px #5b7b3f66;
+}
+
+.sello-cuadro {
+    width: 140px;
+    height: 86px;
     border: 3px dotted #b99b2c;
+    position: relative;
+    display: block;
+}
+
+.sello-texto {
+    margin: 0;
     color: #b99b2c;
     font-family: "Courier New", monospace;
-    font-size: 18px;
+    font-size: 15px;
     font-weight: 700;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    text-align: center;
     text-transform: uppercase;
+    line-height: 1;
+    white-space: nowrap;
+}
+
+.caja-sello.sellado .sello-cuadro {
+    border-color: transparent;
+}
+
+.marca-sellado {
+    position: absolute;
+    inset: -2px;
+    display: block;
+    background: #e8f0dc;
+    border: 4px solid #5b7b3f;
+    color: #4e6c34;
+    opacity: 0;
+    pointer-events: none;
+    overflow: hidden;
+    image-rendering: pixelated;
+}
+
+.marca-sellado::before,
+.marca-sellado::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    width: 7px;
+    height: 100%;
+    background: repeating-linear-gradient(
+        to bottom,
+        #5b7b3f 0px,
+        #5b7b3f 3px,
+        #dce8cb 3px,
+        #dce8cb 6px
+    );
+}
+
+.marca-sellado::before {
+    left: 0;
+}
+
+.marca-sellado::after {
+    right: 0;
+}
+
+.marca-fecha {
+    position: absolute;
+    left: 12px;
+    right: 58px;
+    top: 12px;
+    font-size: 11px;
+    letter-spacing: 0.6px;
+    font-weight: 700;
+    line-height: 1;
+}
+
+.marca-texto {
+    position: absolute;
+    left: 12px;
+    right: 58px;
+    top: 31px;
+    font-size: 16px;
+    line-height: 0.9;
+    letter-spacing: 0.5px;
+    font-weight: 900;
+    text-align: left;
+}
+
+.marca-escudo {
+    position: absolute;
+    right: 12px;
+    top: 14px;
+    width: 34px;
+    height: 38px;
+    background: #5b7b3f;
+    clip-path: polygon(0 0, 100% 0, 100% 55%, 50% 100%, 0 55%);
+}
+
+.marca-escudo::after {
+    content: "";
+    position: absolute;
+    left: 9px;
+    top: 2px;
+    width: 14px;
+    height: 18px;
+    border: 4px solid #e8f0dc;
+    border-top: 0;
+    border-left: 0;
+    transform: rotate(45deg);
 }
 
 .linea-separador {
@@ -95,33 +207,50 @@
 
 .tarjeta-body {
     display: grid;
-    grid-template-columns: 116px 1fr;
+    grid-template-columns: 116px minmax(0, 1fr);
     gap: 10px;
     padding: 10px;
     border-bottom: 2px solid #8d837b;
 }
 
-.foto-fake {
+.foto-fake,
+.foto-real {
+    width: 100%;
     min-height: 120px;
     border: 2px solid #8d837b;
+    display: block;
+    background: #b9b0a9;
+}
+
+.foto-fake {
     background:
         radial-gradient(circle at 50% 30%, #6f6868 0px, #6f6868 14px, #00000000 15px),
         radial-gradient(circle at 50% 70%, #5d5757 0px, #5d5757 28px, #00000000 29px),
         #b9b0a9;
 }
 
+.foto-real {
+    object-fit: cover;
+}
+
 .info {
     font-family: "Courier New", monospace;
-    font-size: 18px;
+    font-size: 17px;
+    line-height: 1.15;
     display: grid;
     row-gap: 4px;
+    min-width: 0;
 }
 
 .linea {
     display: grid;
-    grid-template-columns: 52px 1fr;
+    grid-template-columns: 78px minmax(0, 1fr);
     column-gap: 6px;
-    align-items: center;
+    align-items: start;
+}
+
+.linea span:last-child {
+    overflow-wrap: anywhere;
 }
 
 .label {
@@ -140,4 +269,40 @@
     font-size: 18px;
     font-weight: 700;
     letter-spacing: 1px;
+}
+
+.curriculum {
+    margin-top: 26px;
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 18px;
+}
+
+@media (max-width: 1100px) {
+    .presentacion {
+        width: 100%;
+        display: block;
+    }
+
+    .presentacion tr {
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+
+    .texto-presentacion {
+        padding-right: 0;
+        max-width: 100%;
+    }
+
+    .columna-tarjeta,
+    .tarjeta {
+        width: 100%;
+        max-width: 420px;
+        margin: 0 auto;
+    }
+
+    .curriculum {
+        grid-template-columns: 1fr;
+    }
 }

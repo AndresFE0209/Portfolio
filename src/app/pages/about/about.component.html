@@ -4,8 +4,9 @@
             <td class="texto-presentacion">
                 <h1>Sobre Mi</h1>
                 <p>
-                    Soy Andres Fernandez Exposito, estudiante de DAM y actualmente en practicas en Plexus Tech.
-                    Mi objetivo es crecer como desarrollador fullstack.
+                    Soy Andres Fernandez Exposito, estudiante de Desarrollo de Aplicaciones Multiplataforma y actualmente en practicas en Plexus Tech.<br>
+                    Me considero un trabajador proactivo, con ganas de aprender.
+                    Tengo un perfil orientado al trabajo en equipo, con alta flexibilidad y capaz de asumir retos nuevos.
                 </p>
             </td>
 
@@ -13,24 +14,47 @@
                 <div class="tarjeta">
                     <div class="tarjeta-top">
                         <span>{{ datos.pais }}</span>
-                        <span>ENTRY VISA</span>
+                        <span>VISADO</span>
                     </div>
 
                     <div class="zona-sello-guia">
-                        <div class="caja-sello">ENTRY VISA</div>
+                        <div
+                            class="caja-sello"
+                            role="button"
+                            tabindex="0"
+                            (click)="onStampClick($event)"
+                            (keydown.enter)="onStampClick($event)"
+                            (keydown.space)="onStampClick($event)"
+                            [class.sellado]="sello">
+                            <span class="sello-cuadro">
+                                <span class="marca-sellado">
+                                    <span class="marca-fecha">2026.04.21</span>
+                                    <span class="marca-texto">ENTRADA<br />APROBADA</span>
+                                    <span class="marca-escudo" aria-hidden="true"></span>
+                                </span>
+                            </span>
+                            <p class="sello-texto">VISADO DE ENTRADA</p>
+                        </div>
                     </div>
 
                     <div class="linea-separador"></div>
 
                     <div class="tarjeta-body">
-                        <div class="foto-fake"></div>
+                        @if (fotoVisible) {
+                            <img
+                                class="foto-real"
+                                src="/assets/retrato.png"
+                                alt="Retrato de Andres Fernandez" />
+                        } @else {
+                            <div class="foto-fake"></div>
+                        }
 
                         <div class="info">
-                            <div class="linea"><span class="label">DOB:</span><span>{{ datos.nac }}</span></div>
-                            <div class="linea"><span class="label">SEX:</span><span>M</span></div>
-                            <div class="linea"><span class="label">ISS:</span><span>{{ datos.pais }}</span></div>
+                            <div class="linea"><span class="label">F.NAC:</span><span>{{ datos.nac }}</span></div>
+                            <div class="linea"><span class="label">SEXO:</span><span>M</span></div>
+                            <div class="linea"><span class="label">PAIS:</span><span>{{ datos.pais }}</span></div>
                             <div class="linea"><span class="label">EXP:</span><span>{{ datos.exp }}</span></div>
-                            <div class="linea"><span class="label">NAME:</span><span>{{ datos.nombre }}</span></div>
+                            <div class="linea"><span class="label">NOMBRE:</span><span>{{ datos.nombre }}</span></div>
                         </div>
                     </div>
 
@@ -41,4 +65,16 @@
             </td>
         </tr>
     </table>
+
+    <div class="curriculum">
+        <app-cv-stack
+            [tituloSeccion]="'Formacion'"
+            [items]="formacion">
+        </app-cv-stack>
+
+        <app-cv-stack
+            [tituloSeccion]="'Experiencia'"
+            [items]="experienciaCV">
+        </app-cv-stack>
+    </div>
 </section>

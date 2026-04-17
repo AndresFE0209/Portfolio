@@ -1,0 +1,27 @@
+<section class="login">
+    <div class="login-caja">
+        <h1>Acceso Admin</h1>
+
+        <label for="email">Email</label>
+        <input
+            id="email"
+            type="email"
+            [(ngModel)]="email"
+            placeholder="admin@correo.com" />
+
+        <label for="password">Password</label>
+        <input
+            id="password"
+            type="password"
+            [(ngModel)]="password"
+            placeholder="Tu password" />
+
+        <button (click)="entrar()" [disabled]="cargando">
+            @if (!cargando) { Entrar } @else { Cargando... }
+        </button>
+
+        @if (error) {
+            <p class="error">{{ error }}</p>
+        }
+    </div>
+</section>

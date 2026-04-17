@@ -1,0 +1,58 @@
+.login {
+    min-height: 100%;
+    padding: 28px 24px;
+    background: linear-gradient(180deg, #101418 0%, #1a2128 100%);
+    display: grid;
+    place-items: center;
+}
+
+.login-caja {
+    width: 100%;
+    max-width: 420px;
+    border: 1px solid #4b5a66;
+    background: #222c35;
+    padding: 20px;
+    color: #e7edf2;
+    display: grid;
+    gap: 10px;
+}
+
+.login-caja h1 {
+    margin: 0 0 6px;
+    font-size: 28px;
+}
+
+.login-caja label {
+    font-weight: 700;
+    color: #b8c3cc;
+}
+
+.login-caja input {
+    width: 100%;
+    border: 1px solid #4b5a66;
+    background: #1a2128;
+    color: #e7edf2;
+    padding: 10px;
+    outline: none;
+}
+
+.login-caja button {
+    margin-top: 6px;
+    border: 1px solid #7fb685;
+    background: #2d3a45;
+    color: #e7edf2;
+    padding: 10px 12px;
+    font-weight: 700;
+    cursor: pointer;
+}
+
+.login-caja button:disabled {
+    opacity: 0.65;
+    cursor: not-allowed;
+}
+
+.error {
+    margin: 0;
+    color: #e38b8b;
+    font-weight: 700;
+}

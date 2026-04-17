@@ -1,0 +1,52 @@
+.bloque-cv {
+    min-width: 0;
+}
+
+.titulo-bloque {
+    margin: 0 0 12px;
+    font-family: "Courier New", monospace;
+    font-size: 24px;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+}
+
+.stack {
+    display: grid;
+    gap: 12px;
+}
+
+.card-cv {
+    min-width: 0;
+    padding: 12px;
+    border: 1px solid #6b5a3b;
+    border-radius: 6px;
+}
+
+.periodo {
+    display: inline-block;
+    margin-bottom: 6px;
+    font-size: 12px;
+    font-weight: 700;
+    text-transform: uppercase;
+}
+
+.card-cv h3 {
+    margin: 0 0 4px;
+    font-size: 18px;
+    line-height: 1.2;
+    overflow-wrap: anywhere;
+}
+
+.entidad {
+    margin: 0 0 6px;
+    font-size: 14px;
+    font-weight: 700;
+    overflow-wrap: anywhere;
+}
+
+.detalle {
+    margin: 0;
+    font-size: 14px;
+    line-height: 1.3;
+    overflow-wrap: anywhere;
+}

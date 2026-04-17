@@ -1,0 +1,14 @@
+<article class="bloque-cv">
+    <h2 class="titulo-bloque">{{ tituloSeccion }}</h2>
+
+    <div class="stack">
+        @for (item of items; track item.titulo) {
+            <div class="card-cv">
+                <span class="periodo">{{ item.periodo }}</span>
+                <h3>{{ item.titulo }}</h3>
+                <p class="entidad">{{ item.entidad }}</p>
+                <p class="detalle">{{ item.detalle }}</p>
+            </div>
+        }
+    </div>
+</article>

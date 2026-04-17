@@ -1,0 +1,12 @@
+{
+  "profile": [
+    {
+      "id": 1,
+      "email": "andres@plexus.com",
+      "nombre": "Andres Fernandez",
+      "password": "andres",
+      "rol": "admin"
+    }
+  ],
+  "feedbacks": []
+}

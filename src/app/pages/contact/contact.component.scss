@@ -1,0 +1,129 @@
+.contacto {
+    min-height: 100%;
+    padding: 28px 24px;
+    color: #e9fffb;
+    background:
+        radial-gradient(circle at 18% 8%, #3f8f8a 0px, #00000000 35%),
+        radial-gradient(circle at 82% 14%, #56a2a9 0px, #00000000 38%),
+        linear-gradient(180deg, #0a1e23 0px, #123039 100%);
+}
+
+.contacto-contenedor {
+    max-width: 960px;
+    margin: 0 auto;
+    border: 1px solid #73b7b2;
+    background: linear-gradient(180deg, #1a3f49 0%, #14353e 100%);
+    box-shadow: 0 16px 34px #0000004a, inset 0 0 0 1px #ffffff12;
+}
+
+.contacto-cabecera {
+    padding: 22px 22px 16px;
+    border-bottom: 1px solid #73b7b2;
+    background: linear-gradient(180deg, #24545e 0%, #1b444d 100%);
+}
+
+.contacto-cabecera h1 {
+    margin: 0 0 8px;
+    font-size: 36px;
+    letter-spacing: 0.4px;
+    color: #ecfffb;
+}
+
+.contacto-cabecera p {
+    margin: 0;
+    color: #c4ebe4;
+    line-height: 1.4;
+    max-width: 760px;
+}
+
+.formulario-feedback {
+    padding: 20px 22px 24px;
+    display: grid;
+    gap: 14px;
+}
+
+.rejilla-campos {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 12px;
+}
+
+.campo {
+    display: grid;
+    gap: 6px;
+    min-width: 0;
+}
+
+.campo label {
+    font-weight: 700;
+    color: #bff2e9;
+    letter-spacing: 0.2px;
+}
+
+.campo input,
+.campo select,
+.campo textarea {
+    width: 100%;
+    border: 1px solid #73b7b2;
+    background: #0f2a31;
+    color: #ecfffb;
+    padding: 10px 11px;
+    font-size: 16px;
+    outline: none;
+}
+
+.campo input::placeholder,
+.campo textarea::placeholder {
+    color: #9ac8c2;
+}
+
+.campo input:focus,
+.campo select:focus,
+.campo textarea:focus {
+    border-color: #a8efe2;
+    box-shadow: 0 0 0 2px #a8efe244;
+}
+
+.campo small {
+    color: #ff9fb1;
+    font-size: 13px;
+    line-height: 1.2;
+}
+
+.acciones {
+    display: flex;
+}
+
+.boton-enviar {
+    border: 1px solid #8ed6cb;
+    background: linear-gradient(180deg, #3e9089 0%, #2f746e 100%);
+    color: #ecfffb;
+    font-weight: 700;
+    padding: 10px 16px;
+    cursor: pointer;
+    transition: filter 0.2s ease, transform 0.2s ease;
+}
+
+.boton-enviar:hover:not(:disabled) {
+    filter: brightness(1.08);
+    transform: translateY(-1px);
+}
+
+.boton-enviar:disabled {
+    opacity: 0.65;
+    cursor: not-allowed;
+}
+
+.estado {
+    margin: 0;
+    font-size: 14px;
+    font-weight: 700;
+}
+
+.estado.exito {
+    color: #9df0cf;
+}
+
+.estado.error {
+    color: #ff9fb1;
+}
