@@ -1,11 +1,20 @@
+:host {
+    display: flex;
+    flex: 1;
+    width: 100%;
+}
+
 .about {
-    min-height: 100%;
+    display: flex;
+    flex: 1;
+    flex-direction: column;
+    width: 100%;
     padding: 24px;
     color: #dce6f3;
     background:
-        radial-gradient(circle at 12% 10%, #2a3f57 0px, #00000000 34%),
-        radial-gradient(circle at 88% 20%, #1f3042 0px, #00000000 36%),
-        linear-gradient(180deg, #0f1824 0px, #132033 100%);
+        radial-gradient(circle at 12% 10%, #2a3f57 0, #0000 34%),
+        radial-gradient(circle at 88% 20%, #1f3042 0, #0000 36%),
+        linear-gradient(180deg, #0f1824 0, #132033 100%);
 }
 
 .presentacion {
@@ -16,39 +25,49 @@
 
 .texto-presentacion {
     width: auto;
+    max-width: 560px;
     padding-right: 300px;
     vertical-align: top;
-    max-width: 560px;
 }
 
 .texto-presentacion h1 {
-    margin: 0px 0px 14px 0px;
+    margin: 0 0 14px;
     font-size: 44px;
     color: #dbe7f5;
     letter-spacing: 1px;
 }
 
 .texto-presentacion p {
-    margin: 0px;
+    margin: 0;
+    max-width: 560px;
     color: #cfdced;
     line-height: 1.35;
     font-size: 28px;
-    max-width: 560px;
+    text-align: justify;
 }
 
 .columna-tarjeta {
-    width: 340px;
-    padding: 0px;
+    width: 380px;
+    padding: 0;
     vertical-align: top;
 }
 
 .tarjeta {
-    width: 340px;
-    margin: 0px;
+    width: 380px;
+    margin: 0;
+    padding: 0;
     border: 4px solid #3e3434;
+    border-radius: 0;
     background: #d8d0c8;
     color: #514646;
-    box-shadow: 0px 0px 0px 2px #8d837b inset, 0px 14px 24px #00000055;
+    box-shadow: 0 0 0 2px #8d837b inset, 0 14px 24px #00000055;
+}
+
+.tarjeta-top,
+.sello-texto,
+.info,
+.codigo {
+    font-family: "Courier New", monospace;
 }
 
 .tarjeta-top {
@@ -56,7 +75,6 @@
     justify-content: space-between;
     padding: 14px 12px;
     border-bottom: 2px solid #8d837b;
-    font-family: "Courier New", monospace;
     font-size: 19px;
     font-weight: 700;
     text-transform: uppercase;
@@ -64,25 +82,47 @@
 }
 
 .zona-sello-guia {
-    padding: 14px 10px;
-    border-bottom: 2px solid #8d837b;
-    background: #ddd5cd;
     display: flex;
     justify-content: center;
     align-items: center;
+    padding: 14px 10px;
+    border-bottom: 2px solid #8d837b;
+    background: #ddd5cd;
 }
 
 .caja-sello {
     width: 190px;
+    display: inline-flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 8px;
+    background: transparent !important;
+    cursor: pointer;
+    user-select: none;
+    outline: none;
+    border: none !important;
+    padding: 0 !important;
+    min-width: 0 !important;
+    transition: filter 0.15s ease;
+}
+
+.caja-sello.mat-mdc-outlined-button {
+    --mdc-outlined-button-container-shape: 0px;
+    --mdc-outlined-button-outline-width: 0px;
+    --mdc-outlined-button-label-text-color: inherit;
+    min-width: 0;
+    height: auto;
+    line-height: normal;
+    padding: 0;
+    border: 0;
+    border-radius: 0;
+}
+
+.caja-sello .mdc-button__label {
     display: flex;
     flex-direction: column;
     align-items: center;
     gap: 8px;
-    background: transparent;
-    cursor: pointer;
-    user-select: none;
-    transition: filter 0.15s ease;
-    outline: none;
 }
 
 .caja-sello:hover {
@@ -96,15 +136,14 @@
 .sello-cuadro {
     width: 140px;
     height: 86px;
-    border: 3px dotted #b99b2c;
     position: relative;
     display: block;
+    border: 3px dotted #b99b2c;
 }
 
 .sello-texto {
     margin: 0;
     color: #b99b2c;
-    font-family: "Courier New", monospace;
     font-size: 15px;
     font-weight: 700;
     text-transform: uppercase;
@@ -120,13 +159,13 @@
     position: absolute;
     inset: -2px;
     display: block;
-    background: #e8f0dc;
-    border: 4px solid #5b7b3f;
-    color: #4e6c34;
     opacity: 0;
     pointer-events: none;
     overflow: hidden;
     image-rendering: pixelated;
+    background: #e8f0dc;
+    border: 4px solid #5b7b3f;
+    color: #4e6c34;
 }
 
 .marca-sellado::before,
@@ -136,13 +175,7 @@
     top: 0;
     width: 7px;
     height: 100%;
-    background: repeating-linear-gradient(
-        to bottom,
-        #5b7b3f 0px,
-        #5b7b3f 3px,
-        #dce8cb 3px,
-        #dce8cb 6px
-    );
+    background: repeating-linear-gradient(to bottom, #5b7b3f 0, #5b7b3f 3px, #dce8cb 3px, #dce8cb 6px);
 }
 
 .marca-sellado::before {
@@ -153,33 +186,36 @@
     right: 0;
 }
 
-.marca-fecha {
+.marca-fecha,
+.marca-texto,
+.marca-escudo {
     position: absolute;
+}
+
+.marca-fecha {
+    top: 12px;
     left: 12px;
     right: 58px;
-    top: 12px;
     font-size: 11px;
-    letter-spacing: 0.6px;
     font-weight: 700;
+    letter-spacing: 0.6px;
     line-height: 1;
 }
 
 .marca-texto {
-    position: absolute;
+    top: 31px;
     left: 12px;
     right: 58px;
-    top: 31px;
     font-size: 16px;
-    line-height: 0.9;
-    letter-spacing: 0.5px;
     font-weight: 900;
+    letter-spacing: 0.5px;
+    line-height: 0.9;
     text-align: left;
 }
 
 .marca-escudo {
-    position: absolute;
-    right: 12px;
     top: 14px;
+    right: 12px;
     width: 34px;
     height: 38px;
     background: #5b7b3f;
@@ -189,8 +225,8 @@
 .marca-escudo::after {
     content: "";
     position: absolute;
-    left: 9px;
     top: 2px;
+    left: 9px;
     width: 14px;
     height: 18px;
     border: 4px solid #e8f0dc;
@@ -200,9 +236,7 @@
 }
 
 .linea-separador {
-    height: 5px;
-    background: repeating-linear-gradient(90deg, #7c7470 0px, #7c7470 8px, #c3bbb4 8px, #c3bbb4 16px);
-    border-bottom: 2px solid #8d837b;
+    border-top-color: #8d837b66;
 }
 
 .tarjeta-body {
@@ -217,15 +251,15 @@
 .foto-real {
     width: 100%;
     min-height: 120px;
-    border: 2px solid #8d837b;
     display: block;
+    border: 2px solid #8d837b;
     background: #b9b0a9;
 }
 
 .foto-fake {
     background:
-        radial-gradient(circle at 50% 30%, #6f6868 0px, #6f6868 14px, #00000000 15px),
-        radial-gradient(circle at 50% 70%, #5d5757 0px, #5d5757 28px, #00000000 29px),
+        radial-gradient(circle at 50% 30%, #6f6868 0, #6f6868 14px, #0000 15px),
+        radial-gradient(circle at 50% 70%, #5d5757 0, #5d5757 28px, #0000 29px),
         #b9b0a9;
 }
 
@@ -234,12 +268,11 @@
 }
 
 .info {
-    font-family: "Courier New", monospace;
-    font-size: 17px;
-    line-height: 1.15;
+    min-width: 0;
     display: grid;
     row-gap: 4px;
-    min-width: 0;
+    font-size: 17px;
+    line-height: 1.15;
 }
 
 .linea {
@@ -258,14 +291,13 @@
 }
 
 .tarjeta-bottom {
-    padding: 7px 10px;
-    background: #cec5bd;
     display: flex;
     justify-content: flex-end;
+    padding: 7px 10px;
+    background: #cec5bd;
 }
 
 .codigo {
-    font-family: "Courier New", monospace;
     font-size: 18px;
     font-weight: 700;
     letter-spacing: 1px;
@@ -278,31 +310,9 @@
     gap: 18px;
 }
 
-@media (max-width: 1100px) {
-    .presentacion {
-        width: 100%;
-        display: block;
-    }
-
-    .presentacion tr {
-        display: grid;
-        grid-template-columns: 1fr;
-        gap: 20px;
-    }
-
-    .texto-presentacion {
-        padding-right: 0;
-        max-width: 100%;
-    }
-
-    .columna-tarjeta,
-    .tarjeta {
-        width: 100%;
-        max-width: 420px;
-        margin: 0 auto;
-    }
-
-    .curriculum {
-        grid-template-columns: 1fr;
-    }
+.cv-card {
+    background: #1a2a3d;
+    border: 1px solid #3a4f69;
+    padding: 8px;
+    color: #dce6f3;
 }

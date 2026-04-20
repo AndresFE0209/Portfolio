@@ -1,12 +1,24 @@
 import { Component } from '@angular/core';
 import { FormsModule } from '@angular/forms';
+import { MatFormFieldModule } from '@angular/material/form-field';
+import { MatInputModule } from '@angular/material/input';
+import { MatSelectModule } from '@angular/material/select';
+import { MatButtonModule } from '@angular/material/button';
+import { MatOptionModule } from '@angular/material/core';
 import { FeedbackPayload, FeedbackService } from '../../services/feedback.service';
 
 type CategoriaFeedback = 'sugerencia' | 'error' | 'idea' | 'comentario';
 
 @Component({
   selector: 'app-contact',
-  imports: [FormsModule],
+  imports: [
+    FormsModule,
+    MatFormFieldModule,
+    MatInputModule,
+    MatSelectModule,
+    MatButtonModule,
+    MatOptionModule
+  ],
   templateUrl: './contact.component.html',
   styleUrl: './contact.component.scss'
 })

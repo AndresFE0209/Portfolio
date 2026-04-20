@@ -1,7 +1,15 @@
+:host {
+    display: flex;
+    flex: 1;
+}
+
 .home-gamer {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
     padding: 24px;
-    min-height: 70vh;
     color: #f5ead7;
+    
     background:
         radial-gradient(circle at 20% 10%, #3a2f1e 0%, transparent 35%),
         radial-gradient(circle at 80% 20%, #1f3a2d 0%, transparent 35%),
@@ -11,7 +19,7 @@
 .cabecera {
     text-align: center;
     max-width: 900px;
-    margin: 0 auto 80px auto;
+    margin: 36px auto 80px auto;
 }
 
 h1 {
@@ -55,7 +63,6 @@ h1 {
     grid-template-columns: repeat(4, 1fr);
     gap: 12px;
 }
-
 
 ::ng-deep app-card img {
     width: 72px !important;

@@ -11,20 +11,18 @@
             </td>
 
             <td class="columna-tarjeta">
-                <div class="tarjeta">
+                <mat-card class="tarjeta">
                     <div class="tarjeta-top">
                         <span>{{ datos.pais }}</span>
                         <span>VISADO</span>
                     </div>
 
                     <div class="zona-sello-guia">
-                        <div
+                        <button
+                            mat-stroked-button
+                            type="button"
                             class="caja-sello"
-                            role="button"
-                            tabindex="0"
                             (click)="onStampClick($event)"
-                            (keydown.enter)="onStampClick($event)"
-                            (keydown.space)="onStampClick($event)"
                             [class.sellado]="sello">
                             <span class="sello-cuadro">
                                 <span class="marca-sellado">
@@ -34,10 +32,10 @@
                                 </span>
                             </span>
                             <p class="sello-texto">VISADO DE ENTRADA</p>
-                        </div>
+                        </button>
                     </div>
 
-                    <div class="linea-separador"></div>
+                    <mat-divider class="linea-separador"></mat-divider>
 
                     <div class="tarjeta-body">
                         @if (fotoVisible) {
@@ -61,20 +59,24 @@
                     <div class="tarjeta-bottom">
                         <span class="codigo">A8HFR-GAN5</span>
                     </div>
-                </div>
+                </mat-card>
             </td>
         </tr>
     </table>
 
     <div class="curriculum">
-        <app-cv-stack
-            [tituloSeccion]="'Formacion'"
-            [items]="formacion">
-        </app-cv-stack>
+        <mat-card class="cv-card">
+            <app-cv-stack
+                [tituloSeccion]="'Formacion'"
+                [items]="formacion">
+            </app-cv-stack>
+        </mat-card>
 
-        <app-cv-stack
-            [tituloSeccion]="'Experiencia'"
-            [items]="experienciaCV">
-        </app-cv-stack>
+        <mat-card class="cv-card">
+            <app-cv-stack
+                [tituloSeccion]="'Experiencia'"
+                [items]="experienciaCV">
+            </app-cv-stack>
+        </mat-card>
     </div>
 </section>

@@ -1,5 +1,13 @@
+:host {
+    display: flex;
+    flex: 1;
+    width: 100%;
+}
+
 .contacto {
-    min-height: 100%;
+    flex: 1; 
+    display: flex;
+    flex-direction: column;
     padding: 28px 24px;
     color: #e9fffb;
     background:
@@ -9,7 +17,8 @@
 }
 
 .contacto-contenedor {
-    max-width: 960px;
+    max-width: 900px;
+    width: 100%;
     margin: 0 auto;
     border: 1px solid #73b7b2;
     background: linear-gradient(180deg, #1a3f49 0%, #14353e 100%);
@@ -33,7 +42,6 @@
     margin: 0;
     color: #c4ebe4;
     line-height: 1.4;
-    max-width: 760px;
 }
 
 .formulario-feedback {
@@ -49,69 +57,16 @@
 }
 
 .campo {
-    display: grid;
-    gap: 6px;
-    min-width: 0;
-}
-
-.campo label {
-    font-weight: 700;
-    color: #bff2e9;
-    letter-spacing: 0.2px;
-}
-
-.campo input,
-.campo select,
-.campo textarea {
     width: 100%;
-    border: 1px solid #73b7b2;
-    background: #0f2a31;
-    color: #ecfffb;
-    padding: 10px 11px;
-    font-size: 16px;
-    outline: none;
-}
-
-.campo input::placeholder,
-.campo textarea::placeholder {
-    color: #9ac8c2;
-}
-
-.campo input:focus,
-.campo select:focus,
-.campo textarea:focus {
-    border-color: #a8efe2;
-    box-shadow: 0 0 0 2px #a8efe244;
-}
-
-.campo small {
-    color: #ff9fb1;
-    font-size: 13px;
-    line-height: 1.2;
 }
 
 .acciones {
     display: flex;
+    margin-top: 8px;
 }
 
 .boton-enviar {
-    border: 1px solid #8ed6cb;
-    background: linear-gradient(180deg, #3e9089 0%, #2f746e 100%);
-    color: #ecfffb;
     font-weight: 700;
-    padding: 10px 16px;
-    cursor: pointer;
-    transition: filter 0.2s ease, transform 0.2s ease;
-}
-
-.boton-enviar:hover:not(:disabled) {
-    filter: brightness(1.08);
-    transform: translateY(-1px);
-}
-
-.boton-enviar:disabled {
-    opacity: 0.65;
-    cursor: not-allowed;
 }
 
 .estado {
@@ -126,4 +81,47 @@
 
 .estado.error {
     color: #ff9fb1;
+}
+
+::ng-deep .contacto {
+    .mdc-text-field {
+        background-color: #0f2a31 !important;
+    }
+
+    .mat-mdc-form-field {
+        .mdc-notched-outline__leading,
+        .mdc-notched-outline__notch,
+        .mdc-notched-outline__trailing {
+            border-color: #73b7b2 !important;
+        }
+    }
+
+    .mat-mdc-form-field.mat-focused {
+        .mdc-notched-outline__leading,
+        .mdc-notched-outline__notch,
+        .mdc-notched-outline__trailing {
+            border-color: #a8efe2 !important;
+        }
+    }
+
+    .mat-mdc-label {
+        color: #bff2e9 !important;
+    }
+
+    .mdc-text-field__input {
+        color: #ecfffb !important;
+    }
+
+    .mdc-text-field__input::placeholder {
+        color: #9ac8c2 !important;
+    }
+
+    .mat-mdc-raised-button[color="accent"] {
+        background-color: #3e9089 !important;
+        color: #ecfffb !important;
+    }
+
+    .mat-mdc-raised-button[color="accent"]:hover:not(:disabled) {
+        background-color: #4fa899 !important;
+    }
 }

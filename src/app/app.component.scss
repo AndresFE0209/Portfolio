@@ -1,17 +1,16 @@
 :host {
   display: block;
-  min-height: 100vh;
-  background-color: #14100b;
+  height: 100%;
 }
 
 .layout {
-  min-height: calc(100vh - 64px);
   display: flex;
   flex-direction: column;
-  background-color: #14100b;
+  min-height: 100vh; 
 }
 
 .contenido {
   flex: 1;
-  background-color: #14100b;
+  display: flex;
+  flex-direction: column;
 }

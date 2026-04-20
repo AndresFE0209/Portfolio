@@ -7,65 +7,65 @@
 
         <form class="formulario-feedback" (ngSubmit)="enviarFormulario()">
             <div class="rejilla-campos">
-                <div class="campo">
-                    <label for="nombre">Nombre</label>
+                <mat-form-field class="campo">
+                    <mat-label>Nombre</mat-label>
                     <input
-                        id="nombre"
-                        name="nombre"
-                        type="text"
+                        matInput
                         [(ngModel)]="nombre"
+                        name="nombre"
                         placeholder="Tu nombre" />
-
                     @if (mostrarErrores && nombre.trim() === '') {
-                        <small>El nombre no puede estar vacio.</small>
+                        <mat-error>El nombre no puede estar vacío.</mat-error>
                     }
-                </div>
+                </mat-form-field>
 
-                <div class="campo">
-                    <label for="correo">Correo</label>
+                <mat-form-field class="campo">
+                    <mat-label>Correo</mat-label>
                     <input
-                        id="correo"
-                        name="correo"
+                        matInput
                         type="email"
                         [(ngModel)]="correo"
+                        name="correo"
                         placeholder="tu@email.com" />
-
                     @if (mostrarErrores && correo.trim() === '') {
-                        <small>El correo no puede estar vacio.</small>
+                        <mat-error>El correo no puede estar vacío.</mat-error>
                     }
-                </div>
+                </mat-form-field>
             </div>
 
-            <div class="campo">
-                <label for="categoria">Categoria</label>
-                <select id="categoria" name="categoria" [(ngModel)]="categoria">
-                    <option value="">Selecciona una categoria</option>
+            <mat-form-field class="campo">
+                <mat-label>Categoría</mat-label>
+                <mat-select [(ngModel)]="categoria" name="categoria">
+                    <mat-option value="">Selecciona una categoría</mat-option>
                     @for (item of categorias; track item.valor) {
-                        <option [value]="item.valor">{{ item.etiqueta }}</option>
+                        <mat-option [value]="item.valor">{{ item.etiqueta }}</mat-option>
                     }
-                </select>
-
+                </mat-select>
                 @if (mostrarErrores && categoria === '') {
-                    <small>La categoria no puede estar vacia.</small>
+                    <mat-error>La categoría no puede estar vacía.</mat-error>
                 }
-            </div>
+            </mat-form-field>
 
-            <div class="campo">
-                <label for="mensaje">Mensaje</label>
+            <mat-form-field class="campo">
+                <mat-label>Mensaje</mat-label>
                 <textarea
-                    id="mensaje"
+                    matInput
+                    [(ngModel)]="mensaje"
                     name="mensaje"
                     rows="6"
-                    [(ngModel)]="mensaje"
-                    placeholder="Escribe aqui tu comentario..."></textarea>
-
+                    placeholder="Escribe aquí tu comentario..."></textarea>
                 @if (mostrarErrores && mensaje.trim() === '') {
-                    <small>El mensaje no puede estar vacio.</small>
+                    <mat-error>El mensaje no puede estar vacío.</mat-error>
                 }
-            </div>
+            </mat-form-field>
 
             <div class="acciones">
-                <button class="boton-enviar" type="submit" [disabled]="enviando">
+                <button
+                    mat-raised-button
+                    color="accent"
+                    type="submit"
+                    [disabled]="enviando"
+                    class="boton-enviar">
                     @if (!enviando) { Enviar feedback } @else { Enviando... }
                 </button>
             </div>

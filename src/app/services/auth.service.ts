@@ -55,6 +55,6 @@ export class AuthService {
   }
 
   esAdmin(): boolean {
-    return localStorage.getItem('rol') === 'admin';
+    return this.estaAutenticado() && localStorage.getItem('rol') === 'admin';
   }
 }

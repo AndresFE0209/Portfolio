@@ -1,1 +1,64 @@
-<p>admin works!</p>
+<section class="admin">
+	<div class="admin-contenedor">
+		<header class="admin-cabecera">
+			<div>
+				<h1>Panel Admin</h1>
+				<p>Feedback recibido en tiempo real</p>
+			</div>
+
+			<div class="acciones-cabecera">
+				<span class="estado-ws" [class.ok]="wsConectado">
+					WS: {{ wsConectado ? 'Conectado' : 'Desconectado' }}
+				</span>
+
+				<button mat-stroked-button type="button" (click)="recargar()">
+					Recargar
+				</button>
+			</div>
+		</header>
+
+        <div class="filtro-admin">
+            <input
+                type="text"
+                placeholder="Buscar por usuario, email o categoría"
+                [(ngModel)]="filtroGeneral"
+                class="input-filtro"
+            />
+        </div>
+        
+		@if (cargando) {
+			<div class="estado-carga">
+				<mat-spinner diameter="34"></mat-spinner>
+				<span>Cargando feedbacks...</span>
+			</div>
+		}
+
+		@if (error) {
+			<p class="estado error">{{ error }}</p>
+		}
+
+		@if (!cargando && !error && feedbacks.length === 0) {
+			<p class="estado vacio">No hay feedbacks todavía.</p>
+		}
+
+		@if (!cargando && feedbacks.length > 0) {
+			<div class="lista-feedbacks">
+				@for (item of feedbackFiltrados; track item.id) {
+					<mat-card class="feedback-card">
+						<div class="feedback-top">
+							<strong>{{ item.nombre }}</strong>
+							<span>{{ item.createdAt | date: 'dd/MM/yyyy HH:mm' }}</span>
+						</div>
+
+						<div class="meta">
+							<span>{{ item.email }}</span>
+							<span class="chip">{{ item.categoria }}</span>
+						</div>
+
+						<p>{{ item.mensaje }}</p>
+					</mat-card>
+				}
+			</div>
+		}
+	</div>
+</section>

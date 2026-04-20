@@ -1,7 +1,27 @@
 <mat-toolbar class="navbar">
+    <button mat-button [matMenuTriggerFor]="langMenu">
+        <img *ngIf="translate.lang === 'es'" src="assets/es.svg" class="flag" alt="Español" />
+        <img *ngIf="translate.currentLang === 'en'" src="assets/gb.svg" class="flag" alt="English" />
+        <img *ngIf="translate.currentLang === 'it'" src="assets/it.svg" class="flag" alt="Italiano" />
+        <span *ngIf="translate.currentLang === 'es'">Español</span>
+        <span *ngIf="translate.currentLang === 'en'">English</span>
+        <span *ngIf="translate.currentLang === 'it'">Italiano</span>
+    </button>
+    <mat-menu #langMenu="matMenu">
+        <button mat-menu-item (click)="cambiarIdiomaManual('es')">
+            <img src="assets/es.svg" class="flag" alt="Español" /> Español
+        </button>
+        <button mat-menu-item (click)="cambiarIdiomaManual('en')">
+            <img src="./assets/gb.svg" class="flag" alt="English" /> English
+        </button>
+        <button mat-menu-item (click)="cambiarIdiomaManual('it')">
+            <img src="assets/it.svg" class="flag" alt="Italiano" /> Italiano
+        </button>
+    </mat-menu>
+
     <span class="marca">Mi Portfolio</span>
     <span class="espaciador"></span>
-
+    
     <a
         class="btn-nav"
         mat-button
@@ -39,7 +59,8 @@
         Contacto
     </a>
 
-    <a
+    @if (!authService.estaAutenticado()){
+        <a
         class="btn-nav"
         mat-button
         routerLink="/login"
@@ -47,11 +68,13 @@
         (mouseenter)="zoomHover($event)"
         (mouseleave)="zoomOut($event)"
         (click)="zoomClick($event)"
-    >
-        Login
-    </a>
-
-    <a
+        >
+            Login
+        </a>
+    }
+    
+    @if(authService.esAdmin()){
+        <a
         class="btn-nav"
         mat-button
         routerLink="/admin"
@@ -62,4 +85,16 @@
     >
         Admin
     </a>
+
+    <button
+        class="btn-nav"
+        mat-button
+        (click)="cerrarSesion(); zoomClick($event)"
+        (mouseenter)="zoomHover($event)"
+        (mouseleave)="zoomOut($event)"
+    >
+        Logout
+    </button>
+    }
+    
 </mat-toolbar>

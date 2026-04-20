@@ -1,10 +1,13 @@
 import { Component } from '@angular/core';
 import { gsap } from 'gsap';
 import { CvItem, CvStackComponent } from '../../components/cv-stack/cv-stack.component';
+import { MatCardModule } from '@angular/material/card';
+import { MatDividerModule } from '@angular/material/divider';
+import { MatButtonModule } from '@angular/material/button';
 
 @Component({
   selector: 'app-about',
-  imports: [CvStackComponent],
+  imports: [CvStackComponent, MatCardModule, MatDividerModule, MatButtonModule],
   templateUrl: './about.component.html',
   styleUrl: './about.component.scss'
 })

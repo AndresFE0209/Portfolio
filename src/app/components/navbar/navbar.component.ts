@@ -2,15 +2,25 @@ import { AfterViewInit, Component, OnDestroy } from '@angular/core';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatButtonModule } from '@angular/material/button';
 import { RouterLink, RouterLinkActive } from '@angular/router';
+import { AuthService } from '../../services/auth.service';
 import { gsap } from 'gsap';
+import { TranslateService } from '@ngx-translate/core';
+import { MatMenuModule } from '@angular/material/menu';
+import { MatIconModule } from '@angular/material/icon';
+import { CommonModule } from '@angular/common';
 
 @Component({
   selector: 'app-navbar',
-  imports: [MatToolbarModule, MatButtonModule, RouterLink, RouterLinkActive],
+  imports: [ CommonModule,MatToolbarModule, MatButtonModule, RouterLink, RouterLinkActive, MatIconModule, MatMenuModule],
   templateUrl: './navbar.component.html',
   styleUrl: './navbar.component.scss'
 })
 export class NavbarComponent implements AfterViewInit, OnDestroy {
+  constructor(
+    public authService: AuthService, 
+    public translate: TranslateService
+  ) {}
+
   ngAfterViewInit(): void {
     this.animacionEntradaBotones();
   }
@@ -57,7 +67,24 @@ export class NavbarComponent implements AfterViewInit, OnDestroy {
     });
   }
 
+  cerrarSesion(): void {
+    localStorage.removeItem('token_email');
+    localStorage.removeItem('rol');
+    localStorage.removeItem('nombre_usuario');
+    location.reload();
+  }
+
   ngOnDestroy(): void {
     gsap.killTweensOf('.btn-nav');
+  }
+
+  cambiarIdioma(event: Event): void {
+    const selectElement = event.target as HTMLSelectElement;
+    const idiomaSeleccionado = selectElement.value;
+    this.translate.use(idiomaSeleccionado);
+  }
+
+  cambiarIdiomaManual(lang: string): void {
+    this.translate.use(lang);
   }
 }

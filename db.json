@@ -8,5 +8,174 @@
       "rol": "admin"
     }
   ],
-  "feedbacks": []
+  "feedbacks": [
+    {
+      "nombre": "andres",
+      "email": "andres@andres.com",
+      "categoria": "sugerencia",
+      "mensaje": "Se podria hacer mas ssimple",
+      "createdAt": "2026-04-20T08:28:57.853Z",
+      "id": 1
+    },
+    {
+      "nombre": "asdasdfa",
+      "email": "asd@asd.com",
+      "categoria": "error",
+      "mensaje": "hay un error en  mi correo",
+      "createdAt": "2026-04-20T10:26:16.546Z",
+      "id": 2
+    },
+    {
+      "nombre": "lucia",
+      "email": "lucia@gmail.com",
+      "categoria": "felicitación",
+      "mensaje": "¡Me encanta el diseño!",
+      "createdAt": "2026-04-19T15:12:10.000Z",
+      "id": 3
+    },
+    {
+      "nombre": "marco",
+      "email": "marco@italia.it",
+      "categoria": "sugerencia",
+      "mensaje": "Sería útil un modo oscuro.",
+      "createdAt": "2026-04-18T09:45:00.000Z",
+      "id": 4
+    },
+    {
+      "nombre": "emma",
+      "email": "emma@mail.com",
+      "categoria": "error",
+      "mensaje": "No funciona el botón de enviar.",
+      "createdAt": "2026-04-17T18:30:00.000Z",
+      "id": 5
+    },
+    {
+      "nombre": "john",
+      "email": "john@uk.com",
+      "categoria": "felicitación",
+      "mensaje": "Very nice portfolio!",
+      "createdAt": "2026-04-16T12:00:00.000Z",
+      "id": 6
+    },
+    {
+      "nombre": "sofia",
+      "email": "sofia@es.com",
+      "categoria": "sugerencia",
+      "mensaje": "Agrega más proyectos, por favor.",
+      "createdAt": "2026-04-15T14:20:00.000Z",
+      "id": 7
+    },
+    {
+      "nombre": "giovanni",
+      "email": "giovanni@italia.it",
+      "categoria": "error",
+      "mensaje": "No puedo ver el CV.",
+      "createdAt": "2026-04-14T11:10:00.000Z",
+      "id": 8
+    },
+    {
+      "nombre": "ana",
+      "email": "ana@correo.com",
+      "categoria": "felicitación",
+      "mensaje": "¡Excelente trabajo!",
+      "createdAt": "2026-04-13T16:40:00.000Z",
+      "id": 9
+    },
+    {
+      "nombre": "peter",
+      "email": "peter@mail.com",
+      "categoria": "sugerencia",
+      "mensaje": "Pon tu LinkedIn en la portada.",
+      "createdAt": "2026-04-12T10:05:00.000Z",
+      "id": 10
+    },
+    {
+      "nombre": "carla",
+      "email": "carla@es.com",
+      "categoria": "error",
+      "mensaje": "No carga la imagen de perfil.",
+      "createdAt": "2026-04-11T13:15:00.000Z",
+      "id": 11
+    },
+    {
+      "nombre": "miguel",
+      "email": "miguel@correo.com",
+      "categoria": "felicitación",
+      "mensaje": "Muy profesional.",
+      "createdAt": "2026-04-10T17:50:00.000Z",
+      "id": 12
+    },
+    {
+      "nombre": "elena",
+      "email": "elena@gmail.com",
+      "categoria": "sugerencia",
+      "mensaje": "Traduce la web al italiano.",
+      "createdAt": "2026-04-09T09:30:00.000Z",
+      "id": 13
+    },
+    {
+      "nombre": "roberto",
+      "email": "roberto@it.com",
+      "categoria": "error",
+      "mensaje": "No puedo registrarme.",
+      "createdAt": "2026-04-08T20:00:00.000Z",
+      "id": 14
+    },
+    {
+      "nombre": "lucas",
+      "email": "lucas@es.com",
+      "categoria": "felicitación",
+      "mensaje": "¡Gran portfolio!",
+      "createdAt": "2026-04-07T11:25:00.000Z",
+      "id": 15
+    },
+    {
+      "nombre": "valeria",
+      "email": "valeria@correo.com",
+      "categoria": "sugerencia",
+      "mensaje": "Agrega una sección de blog.",
+      "createdAt": "2026-04-06T15:45:00.000Z",
+      "id": 16
+    },
+    {
+      "nombre": "daniel",
+      "email": "daniel@mail.com",
+      "categoria": "error",
+      "mensaje": "No se ve bien en móvil.",
+      "createdAt": "2026-04-05T18:10:00.000Z",
+      "id": 17
+    },
+    {
+      "nombre": "martina",
+      "email": "martina@es.com",
+      "categoria": "felicitación",
+      "mensaje": "Me gusta mucho tu estilo.",
+      "createdAt": "2026-04-04T14:55:00.000Z",
+      "id": 18
+    },
+    {
+      "nombre": "jorge",
+      "email": "jorge@correo.com",
+      "categoria": "sugerencia",
+      "mensaje": "Pon más ejemplos de código.",
+      "createdAt": "2026-04-03T13:35:00.000Z",
+      "id": 19
+    },
+    {
+      "nombre": "chiara",
+      "email": "chiara@italia.it",
+      "categoria": "error",
+      "mensaje": "No funciona el enlace de contacto.",
+      "createdAt": "2026-04-02T16:20:00.000Z",
+      "id": 20
+    },
+    {
+      "nombre": "david",
+      "email": "david@david.com",
+      "categoria": "error",
+      "mensaje": "esto es una mierda",
+      "createdAt": "2026-04-20T11:17:12.611Z",
+      "id": 21
+    }
+  ]
 }
