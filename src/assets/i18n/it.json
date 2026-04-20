@@ -1,0 +1,78 @@
+{
+    "NAVBAR": {
+        "ESPANOL": "Spagnolo",
+        "ENGLISH": "Inglese",
+        "ITALIANO": "Italiano",
+        "MARCA": "Il mio Portfolio",
+        "INICIO": "Inizio",
+        "SOBRE_MI": "Su di me",
+        "CONTACTO": "Contatto",
+        "LOGIN": "Login",
+        "ADMIN": "Admin",
+        "LOGOUT": "Disconnetti"
+    },
+    "FOOTER": {
+        "MARCA": "Andres Fernandez Exposito",
+        "TECNOLOGIAS": "Realizzato con Angular e Material",
+        "GITHUB": "AndresFE0209"
+    },
+    "HOME": {
+        "NOMBRE": "Andres Fernandez Exposito",
+        "ROL": "FullStack Developer in formazione",
+        "BIENVENIDA": "Benvenuto nel mio portfolio. Sono uno studente DAM e sto facendo uno stage presso Plexus Tech, migliorando le mie competenze poco a poco per continuare a crescere come sviluppatore fullstack.",
+        "STACK": "Stack"
+    },
+    "ABOUT": {
+        "TITULO": "Su di Me",
+        "PRESENTACION": "Sono Andres Fernandez Exposito, studente di Sviluppo di Applicazioni Multiplatform e attualmente stagista presso Plexus Tech. Mi considero una persona proattiva, desiderosa di imparare. Ho un profilo orientato al lavoro di squadra, con grande flessibilità e capace di affrontare nuove sfide.",
+        "VISADO": "VISTO",
+        "ENTRADA_APROBADA": "ENTRATA<br />APPROVATA",
+        "VISADO_ENTRADA": "VISTO D'INGRESSO",
+        "ALT_FOTO": "Ritratto di Andres Fernandez",
+        "FNAC": "NASCITA:",
+        "SEXO": "SESSO:",
+        "PAIS": "PAESE:",
+        "EXP": "EXP:",
+        "NOMBRE": "NOME:",
+        "FORMACION": "Formazione",
+        "EXPERIENCIA": "Esperienza"
+    },
+    "CONTACT": {
+        "TITULO": "Feedback del Portfolio",
+        "DESCRIPCION": "Lascia il tuo commento, suggerimento o idea per migliorare il progetto.",
+        "NOMBRE_LABEL": "Nome",
+        "NOMBRE_PLACEHOLDER": "Il tuo nome",
+        "ERROR_NOMBRE": "Il nome non può essere vuoto.",
+        "CORREO_LABEL": "Email",
+        "CORREO_PLACEHOLDER": "tu@email.com",
+        "ERROR_CORREO": "L'email non può essere vuota.",
+        "CATEGORIA_LABEL": "Categoria",
+        "CATEGORIA_PLACEHOLDER": "Seleziona una categoria",
+        "ERROR_CATEGORIA": "La categoria non può essere vuota.",
+        "MENSAJE_LABEL": "Messaggio",
+        "MENSAJE_PLACEHOLDER": "Scrivi qui il tuo commento...",
+        "ERROR_MENSAJE": "Il messaggio non può essere vuoto.",
+        "BOTON_ENVIAR": "Invia feedback",
+        "BOTON_ENVIANDO": "Invio...",
+        "EXITO": "Feedback inviato correttamente."
+    },
+    "LOGIN": {
+        "TITULO": "Accesso Admin",
+        "EMAIL_LABEL": "Email",
+        "EMAIL_PLACEHOLDER": "admin@email.com",
+        "PASSWORD_LABEL": "Password",
+        "PASSWORD_PLACEHOLDER": "La tua password",
+        "ENTRAR": "Accedi",
+        "CARGANDO": "Caricamento..."
+    },
+    "ADMIN": {
+        "TITULO": "Pannello Admin",
+        "DESCRIPCION": "Feedback ricevuto in tempo reale",
+        "CONECTADO": "Connesso",
+        "DESCONECTADO": "Disconnesso",
+        "RECARGAR": "Ricarica",
+        "BUSCAR_PLACEHOLDER": "Cerca per utente, email o categoria",
+        "CARGANDO": "Caricamento feedback...",
+        "NO_FEEDBACK": "Nessun feedback ancora."
+    }
+}

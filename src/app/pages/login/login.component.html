@@ -1,38 +1,25 @@
 <section class="login">
     <div class="login-caja">
-        <h1>Acceso Admin</h1>
+        <h1>{{ 'LOGIN.TITULO' | translate }}</h1>
 
         <mat-form-field class="campo">
-            <mat-label>Email</mat-label>
-            <input
-                matInput
-                type="email"
-                [(ngModel)]="email"
-                name="email"
-                placeholder="admin@correo.com" />
+            <mat-label>{{ 'LOGIN.EMAIL_LABEL' | translate }}</mat-label>
+            <input matInput type="email" [(ngModel)]="email" name="email"
+                [placeholder]="'LOGIN.EMAIL_PLACEHOLDER' | translate" />
         </mat-form-field>
 
         <mat-form-field class="campo">
-            <mat-label>Password</mat-label>
-            <input
-                matInput
-                type="password"
-                [(ngModel)]="password"
-                name="password"
-                placeholder="Tu password" />
+            <mat-label>{{ 'LOGIN.PASSWORD_LABEL' | translate }}</mat-label>
+            <input matInput type="password" [(ngModel)]="password" name="password"
+                [placeholder]="'LOGIN.PASSWORD_PLACEHOLDER' | translate" />
         </mat-form-field>
 
-        <button
-            mat-raised-button
-            color="primary"
-            (click)="entrar()"
-            [disabled]="cargando"
-            class="boton">
-            @if (!cargando) { Entrar } @else { Cargando... }
+        <button mat-raised-button color="primary" (click)="entrar()" [disabled]="cargando" class="boton">
+            @if (!cargando) { {{ 'LOGIN.ENTRAR' | translate }} } @else { {{ 'LOGIN.CARGANDO' | translate }} }
         </button>
 
         @if (error) {
-            <p class="error">{{ error }}</p>
+        <p class="error">{{ error }}</p>
         }
     </div>
 </section>

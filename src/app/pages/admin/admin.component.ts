@@ -7,10 +7,18 @@ import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
 import { Feedback, FeedbackService } from '../../services/feedback.service';
 import { WebsocketService, FeedbackSocketMessage } from '../../services/websocket.service';
 import { FormsModule } from '@angular/forms';
+import { TranslateModule } from '@ngx-translate/core';
 
 @Component({
   selector: 'app-admin',
-  imports: [CommonModule, MatCardModule, MatButtonModule, MatProgressSpinnerModule, FormsModule],
+  imports: [
+    CommonModule, 
+    MatCardModule, 
+    MatButtonModule, 
+    MatProgressSpinnerModule, 
+    FormsModule,
+    TranslateModule
+  ],
   templateUrl: './admin.component.html',
   styleUrl: './admin.component.scss'
 })

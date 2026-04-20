@@ -6,6 +6,7 @@ import { MatSelectModule } from '@angular/material/select';
 import { MatButtonModule } from '@angular/material/button';
 import { MatOptionModule } from '@angular/material/core';
 import { FeedbackPayload, FeedbackService } from '../../services/feedback.service';
+import { TranslateModule } from '@ngx-translate/core';
 
 type CategoriaFeedback = 'sugerencia' | 'error' | 'idea' | 'comentario';
 
@@ -17,7 +18,8 @@ type CategoriaFeedback = 'sugerencia' | 'error' | 'idea' | 'comentario';
     MatInputModule,
     MatSelectModule,
     MatButtonModule,
-    MatOptionModule
+    MatOptionModule,
+    TranslateModule
   ],
   templateUrl: './contact.component.html',
   styleUrl: './contact.component.scss'

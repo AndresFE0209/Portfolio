@@ -4,10 +4,17 @@ import { CvItem, CvStackComponent } from '../../components/cv-stack/cv-stack.com
 import { MatCardModule } from '@angular/material/card';
 import { MatDividerModule } from '@angular/material/divider';
 import { MatButtonModule } from '@angular/material/button';
+import { TranslateModule } from '@ngx-translate/core';
 
 @Component({
   selector: 'app-about',
-  imports: [CvStackComponent, MatCardModule, MatDividerModule, MatButtonModule],
+  imports: [
+    CvStackComponent, 
+    MatCardModule, 
+    MatDividerModule, 
+    MatButtonModule,
+    TranslateModule
+  ],
   templateUrl: './about.component.html',
   styleUrl: './about.component.scss'
 })

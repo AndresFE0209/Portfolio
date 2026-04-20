@@ -4,22 +4,39 @@ import { MatButtonModule } from '@angular/material/button';
 import { RouterLink, RouterLinkActive } from '@angular/router';
 import { AuthService } from '../../services/auth.service';
 import { gsap } from 'gsap';
-import { TranslateService } from '@ngx-translate/core';
+import { LangChangeEvent, TranslateService } from '@ngx-translate/core';
 import { MatMenuModule } from '@angular/material/menu';
 import { MatIconModule } from '@angular/material/icon';
 import { CommonModule } from '@angular/common';
+import { TranslateModule } from '@ngx-translate/core';
 
 @Component({
   selector: 'app-navbar',
-  imports: [ CommonModule,MatToolbarModule, MatButtonModule, RouterLink, RouterLinkActive, MatIconModule, MatMenuModule],
+  imports: [ 
+    CommonModule,
+    MatToolbarModule, 
+    MatButtonModule, 
+    RouterLink, 
+    RouterLinkActive, 
+    MatIconModule, 
+    MatMenuModule, 
+    TranslateModule
+  ],
   templateUrl: './navbar.component.html',
   styleUrl: './navbar.component.scss'
 })
 export class NavbarComponent implements AfterViewInit, OnDestroy {
+
+  public idiomaActual: string;
   constructor(
     public authService: AuthService, 
     public translate: TranslateService
-  ) {}
+  ) {
+    this.idiomaActual = this.translate.getBrowserLang() || 'es';
+    this.translate.onLangChange.subscribe((event: LangChangeEvent) => {
+      this.idiomaActual = event.lang;
+    });
+  }
 
   ngAfterViewInit(): void {
     this.animacionEntradaBotones();

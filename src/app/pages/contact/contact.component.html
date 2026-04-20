@@ -1,81 +1,66 @@
 <section class="contacto">
     <div class="contacto-contenedor">
         <header class="contacto-cabecera">
-            <h1>Feedback del Portfolio</h1>
-            <p>Deja tu comentario, sugerencia o idea para mejorar el proyecto.</p>
+            <h1>{{ 'CONTACT.TITULO' | translate }}</h1>
+            <p>{{ 'CONTACT.DESCRIPCION' | translate }}</p>
         </header>
 
         <form class="formulario-feedback" (ngSubmit)="enviarFormulario()">
             <div class="rejilla-campos">
                 <mat-form-field class="campo">
-                    <mat-label>Nombre</mat-label>
-                    <input
-                        matInput
-                        [(ngModel)]="nombre"
-                        name="nombre"
-                        placeholder="Tu nombre" />
+                    <mat-label>{{ 'CONTACT.NOMBRE_LABEL' | translate }}</mat-label>
+                    <input matInput [(ngModel)]="nombre" name="nombre"
+                        [placeholder]="'CONTACT.NOMBRE_PLACEHOLDER' | translate" />
                     @if (mostrarErrores && nombre.trim() === '') {
-                        <mat-error>El nombre no puede estar vacío.</mat-error>
+                    <mat-error>{{ 'CONTACT.ERROR_NOMBRE' | translate }}</mat-error>
                     }
                 </mat-form-field>
 
                 <mat-form-field class="campo">
-                    <mat-label>Correo</mat-label>
-                    <input
-                        matInput
-                        type="email"
-                        [(ngModel)]="correo"
-                        name="correo"
-                        placeholder="tu@email.com" />
+                    <mat-label>{{ 'CONTACT.CORREO_LABEL' | translate }}</mat-label>
+                    <input matInput type="email" [(ngModel)]="correo" name="correo"
+                        [placeholder]="'CONTACT.CORREO_PLACEHOLDER' | translate" />
                     @if (mostrarErrores && correo.trim() === '') {
-                        <mat-error>El correo no puede estar vacío.</mat-error>
+                    <mat-error>{{ 'CONTACT.ERROR_CORREO' | translate }}</mat-error>
                     }
                 </mat-form-field>
             </div>
 
             <mat-form-field class="campo">
-                <mat-label>Categoría</mat-label>
+                <mat-label>{{ 'CONTACT.CATEGORIA_LABEL' | translate }}</mat-label>
                 <mat-select [(ngModel)]="categoria" name="categoria">
-                    <mat-option value="">Selecciona una categoría</mat-option>
+                    <mat-option value="">{{ 'CONTACT.CATEGORIA_PLACEHOLDER' | translate }}</mat-option>
                     @for (item of categorias; track item.valor) {
-                        <mat-option [value]="item.valor">{{ item.etiqueta }}</mat-option>
+                    <mat-option [value]="item.valor">{{ item.etiqueta }}</mat-option>
                     }
                 </mat-select>
                 @if (mostrarErrores && categoria === '') {
-                    <mat-error>La categoría no puede estar vacía.</mat-error>
+                <mat-error>{{ 'CONTACT.ERROR_CATEGORIA' | translate }}</mat-error>
                 }
             </mat-form-field>
 
             <mat-form-field class="campo">
-                <mat-label>Mensaje</mat-label>
-                <textarea
-                    matInput
-                    [(ngModel)]="mensaje"
-                    name="mensaje"
-                    rows="6"
-                    placeholder="Escribe aquí tu comentario..."></textarea>
+                <mat-label>{{ 'CONTACT.MENSAJE_LABEL' | translate }}</mat-label>
+                <textarea matInput [(ngModel)]="mensaje" name="mensaje" rows="6"
+                    [placeholder]="'CONTACT.MENSAJE_PLACEHOLDER' | translate"></textarea>
                 @if (mostrarErrores && mensaje.trim() === '') {
-                    <mat-error>El mensaje no puede estar vacío.</mat-error>
+                <mat-error>{{ 'CONTACT.ERROR_MENSAJE' | translate }}</mat-error>
                 }
             </mat-form-field>
 
             <div class="acciones">
-                <button
-                    mat-raised-button
-                    color="accent"
-                    type="submit"
-                    [disabled]="enviando"
-                    class="boton-enviar">
-                    @if (!enviando) { Enviar feedback } @else { Enviando... }
+                <button mat-raised-button color="accent" type="submit" [disabled]="enviando" class="boton-enviar">
+                    @if (!enviando) { {{ 'CONTACT.BOTON_ENVIAR' | translate }} } @else { {{ 'CONTACT.BOTON_ENVIANDO' |
+                    translate }} }
                 </button>
             </div>
 
             @if (enviado) {
-                <p class="estado exito">Feedback enviado correctamente.</p>
+            <p class="estado exito">{{ 'CONTACT.EXITO' | translate }}</p>
             }
 
             @if (mensajeError) {
-                <p class="estado error">{{ mensajeError }}</p>
+            <p class="estado error">{{ mensajeError }}</p>
             }
         </form>
     </div>

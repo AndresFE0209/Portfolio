@@ -2,11 +2,9 @@
     <table class="presentacion">
         <tr>
             <td class="texto-presentacion">
-                <h1>Sobre Mi</h1>
+                <h1>{{ 'ABOUT.TITULO' | translate }}</h1>
                 <p>
-                    Soy Andres Fernandez Exposito, estudiante de Desarrollo de Aplicaciones Multiplataforma y actualmente en practicas en Plexus Tech.<br>
-                    Me considero un trabajador proactivo, con ganas de aprender.
-                    Tengo un perfil orientado al trabajo en equipo, con alta flexibilidad y capaz de asumir retos nuevos.
+                    {{ 'ABOUT.PRESENTACION' | translate }}
                 </p>
             </td>
 
@@ -14,24 +12,20 @@
                 <mat-card class="tarjeta">
                     <div class="tarjeta-top">
                         <span>{{ datos.pais }}</span>
-                        <span>VISADO</span>
+                        <span>{{ 'ABOUT.VISADO' | translate }}</span>
                     </div>
 
                     <div class="zona-sello-guia">
-                        <button
-                            mat-stroked-button
-                            type="button"
-                            class="caja-sello"
-                            (click)="onStampClick($event)"
+                        <button mat-stroked-button type="button" class="caja-sello" (click)="onStampClick($event)"
                             [class.sellado]="sello">
                             <span class="sello-cuadro">
                                 <span class="marca-sellado">
                                     <span class="marca-fecha">2026.04.21</span>
-                                    <span class="marca-texto">ENTRADA<br />APROBADA</span>
+                                    <span class="marca-texto">{{ 'ABOUT.ENTRADA_APROBADA' | translate }}</span>
                                     <span class="marca-escudo" aria-hidden="true"></span>
                                 </span>
                             </span>
-                            <p class="sello-texto">VISADO DE ENTRADA</p>
+                            <p class="sello-texto">{{ 'ABOUT.VISADO_ENTRADA' | translate }}</p>
                         </button>
                     </div>
 
@@ -39,20 +33,22 @@
 
                     <div class="tarjeta-body">
                         @if (fotoVisible) {
-                            <img
-                                class="foto-real"
-                                src="/assets/retrato.png"
-                                alt="Retrato de Andres Fernandez" />
+                        <img class="foto-real" src="/assets/retrato.png" alt="{{ 'ABOUT.ALT_FOTO' | translate }}" />
                         } @else {
-                            <div class="foto-fake"></div>
+                        <div class="foto-fake"></div>
                         }
 
                         <div class="info">
-                            <div class="linea"><span class="label">F.NAC:</span><span>{{ datos.nac }}</span></div>
-                            <div class="linea"><span class="label">SEXO:</span><span>M</span></div>
-                            <div class="linea"><span class="label">PAIS:</span><span>{{ datos.pais }}</span></div>
-                            <div class="linea"><span class="label">EXP:</span><span>{{ datos.exp }}</span></div>
-                            <div class="linea"><span class="label">NOMBRE:</span><span>{{ datos.nombre }}</span></div>
+                            <div class="linea"><span class="label">{{ 'ABOUT.FNAC' | translate }}</span><span>{{
+                                    datos.nac }}</span></div>
+                            <div class="linea"><span class="label">{{ 'ABOUT.SEXO' | translate }}</span><span>M</span>
+                            </div>
+                            <div class="linea"><span class="label">{{ 'ABOUT.PAIS' | translate }}</span><span>{{
+                                    datos.pais }}</span></div>
+                            <div class="linea"><span class="label">{{ 'ABOUT.EXP' | translate }}</span><span>{{
+                                    datos.exp }}</span></div>
+                            <div class="linea"><span class="label">{{ 'ABOUT.NOMBRE' | translate }}</span><span>{{
+                                    datos.nombre }}</span></div>
                         </div>
                     </div>
 
@@ -66,16 +62,12 @@
 
     <div class="curriculum">
         <mat-card class="cv-card">
-            <app-cv-stack
-                [tituloSeccion]="'Formacion'"
-                [items]="formacion">
+            <app-cv-stack [tituloSeccion]="'ABOUT.FORMACION' | translate" [items]="formacion">
             </app-cv-stack>
         </mat-card>
 
         <mat-card class="cv-card">
-            <app-cv-stack
-                [tituloSeccion]="'Experiencia'"
-                [items]="experienciaCV">
+            <app-cv-stack [tituloSeccion]="'ABOUT.EXPERIENCIA' | translate" [items]="experienciaCV">
             </app-cv-stack>
         </mat-card>
     </div>

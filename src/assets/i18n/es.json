@@ -1,0 +1,78 @@
+{
+    "NAVBAR": {
+        "ESPANOL": "Español",
+        "ENGLISH": "Inglés",
+        "ITALIANO": "Italiano",
+        "MARCA": "Mi Portfolio",
+        "INICIO": "Inicio",
+        "SOBRE_MI": "Sobre mí",
+        "CONTACTO": "Contacto",
+        "LOGIN": "Login",
+        "ADMIN": "Admin",
+        "LOGOUT": "Cerrar sesión"
+    },
+    "FOOTER": {
+        "MARCA": "Andres Fernandez Exposito",
+        "TECNOLOGIAS": "Hecho con Angular y Material",
+        "GITHUB": "AndresFE0209"
+    },
+    "HOME": {
+        "NOMBRE": "Andres Fernandez Exposito",
+        "ROL": "FullStack Developer en formación",
+        "BIENVENIDA": "Bienvenido a mi portfolio. Soy estudiante de DAM y estoy en prácticas en Plexus Tech, mejorando mis habilidades poco a poco para seguir avanzando como desarrollador fullstack.",
+        "STACK": "Stack"
+    },
+    "ABOUT": {
+        "TITULO": "Sobre Mí",
+        "PRESENTACION": "Soy Andres Fernandez Exposito, estudiante de Desarrollo de Aplicaciones Multiplataforma y actualmente en prácticas en Plexus Tech. Me considero un trabajador proactivo, con ganas de aprender. Tengo un perfil orientado al trabajo en equipo, con alta flexibilidad y capaz de asumir retos nuevos.",
+        "VISADO": "VISADO",
+        "ENTRADA_APROBADA": "ENTRADA<br />APROBADA",
+        "VISADO_ENTRADA": "VISADO DE ENTRADA",
+        "ALT_FOTO": "Retrato de Andres Fernandez",
+        "FNAC": "F.NAC:",
+        "SEXO": "SEXO:",
+        "PAIS": "PAIS:",
+        "EXP": "EXP:",
+        "NOMBRE": "NOMBRE:",
+        "FORMACION": "Formación",
+        "EXPERIENCIA": "Experiencia"
+    },
+    "CONTACT": {
+        "TITULO": "Feedback del Portfolio",
+        "DESCRIPCION": "Deja tu comentario, sugerencia o idea para mejorar el proyecto.",
+        "NOMBRE_LABEL": "Nombre",
+        "NOMBRE_PLACEHOLDER": "Tu nombre",
+        "ERROR_NOMBRE": "El nombre no puede estar vacío.",
+        "CORREO_LABEL": "Correo",
+        "CORREO_PLACEHOLDER": "tu@email.com",
+        "ERROR_CORREO": "El correo no puede estar vacío.",
+        "CATEGORIA_LABEL": "Categoría",
+        "CATEGORIA_PLACEHOLDER": "Selecciona una categoría",
+        "ERROR_CATEGORIA": "La categoría no puede estar vacía.",
+        "MENSAJE_LABEL": "Mensaje",
+        "MENSAJE_PLACEHOLDER": "Escribe aquí tu comentario...",
+        "ERROR_MENSAJE": "El mensaje no puede estar vacío.",
+        "BOTON_ENVIAR": "Enviar feedback",
+        "BOTON_ENVIANDO": "Enviando...",
+        "EXITO": "Feedback enviado correctamente."
+    },
+    "LOGIN": {
+        "TITULO": "Acceso Admin",
+        "EMAIL_LABEL": "Email",
+        "EMAIL_PLACEHOLDER": "admin@correo.com",
+        "PASSWORD_LABEL": "Password",
+        "PASSWORD_PLACEHOLDER": "Tu password",
+        "ENTRAR": "Entrar",
+        "CARGANDO": "Cargando..."
+    },
+    "ADMIN": {
+        "TITULO": "Panel Admin",
+        "DESCRIPCION": "Feedback recibido en tiempo real",
+        "CONECTADO": "Conectado",
+        "DESCONECTADO": "Desconectado",
+        "RECARGAR": "Recargar",
+        "BUSCAR_PLACEHOLDER": "Buscar por usuario, email o categoría",
+        "CARGANDO": "Cargando feedbacks...",
+        "NO_FEEDBACK": "No hay feedbacks todavía."
+    }
+}

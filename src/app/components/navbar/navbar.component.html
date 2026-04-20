@@ -1,100 +1,59 @@
 <mat-toolbar class="navbar">
     <button mat-button [matMenuTriggerFor]="langMenu">
-        <img *ngIf="translate.lang === 'es'" src="assets/es.svg" class="flag" alt="Español" />
-        <img *ngIf="translate.currentLang === 'en'" src="assets/gb.svg" class="flag" alt="English" />
-        <img *ngIf="translate.currentLang === 'it'" src="assets/it.svg" class="flag" alt="Italiano" />
-        <span *ngIf="translate.currentLang === 'es'">Español</span>
-        <span *ngIf="translate.currentLang === 'en'">English</span>
-        <span *ngIf="translate.currentLang === 'it'">Italiano</span>
+        <img *ngIf="idiomaActual === 'es'" src="assets/es.svg" class="flag" alt="Español" />
+        <img *ngIf="idiomaActual === 'en'" src="assets/gb.svg" class="flag" alt="English" />
+        <img *ngIf="idiomaActual === 'it'" src="assets/it.svg" class="flag" alt="Italiano" />
+        <span *ngIf="idiomaActual === 'es'">{{ 'NAVBAR.ESPANOL' | translate }}</span>
+        <span *ngIf="idiomaActual === 'en'">{{ 'NAVBAR.ENGLISH' | translate }}</span>
+        <span *ngIf="idiomaActual === 'it'">{{ 'NAVBAR.ITALIANO' | translate }}</span>
     </button>
     <mat-menu #langMenu="matMenu">
         <button mat-menu-item (click)="cambiarIdiomaManual('es')">
-            <img src="assets/es.svg" class="flag" alt="Español" /> Español
+            <img src="assets/es.svg" class="flag" alt="Español" /> {{ 'NAVBAR.ESPANOL' | translate }}
         </button>
         <button mat-menu-item (click)="cambiarIdiomaManual('en')">
-            <img src="./assets/gb.svg" class="flag" alt="English" /> English
+            <img src="assets/gb.svg" class="flag" alt="English" /> {{ 'NAVBAR.ENGLISH' | translate }}
         </button>
         <button mat-menu-item (click)="cambiarIdiomaManual('it')">
-            <img src="assets/it.svg" class="flag" alt="Italiano" /> Italiano
+            <img src="assets/it.svg" class="flag" alt="Italiano" /> {{ 'NAVBAR.ITALIANO' | translate }}
         </button>
     </mat-menu>
 
-    <span class="marca">Mi Portfolio</span>
+    <span class="marca">{{ 'NAVBAR.MARCA' | translate }}</span>
     <span class="espaciador"></span>
-    
-    <a
-        class="btn-nav"
-        mat-button
-        routerLink="/home"
-        routerLinkActive="active"
-        [routerLinkActiveOptions]="{ exact: true }"
-        (mouseenter)="zoomHover($event)"
-        (mouseleave)="zoomOut($event)"
-        (click)="zoomClick($event)"
-    >
-        Inicio
+
+    <a class="btn-nav" mat-button routerLink="/home" routerLinkActive="active"
+        [routerLinkActiveOptions]="{ exact: true }" (mouseenter)="zoomHover($event)" (mouseleave)="zoomOut($event)"
+        (click)="zoomClick($event)">
+        {{ 'NAVBAR.INICIO' | translate }}
     </a>
 
-    <a
-        class="btn-nav"
-        mat-button
-        routerLink="/about"
-        routerLinkActive="active"
-        (mouseenter)="zoomHover($event)"
-        (mouseleave)="zoomOut($event)"
-        (click)="zoomClick($event)"
-    >
-        Sobre mi
+    <a class="btn-nav" mat-button routerLink="/about" routerLinkActive="active" (mouseenter)="zoomHover($event)"
+        (mouseleave)="zoomOut($event)" (click)="zoomClick($event)">
+        {{ 'NAVBAR.SOBRE_MI' | translate }}
     </a>
 
-    <a
-        class="btn-nav"
-        mat-button
-        routerLink="/contact"
-        routerLinkActive="active"
-        (mouseenter)="zoomHover($event)"
-        (mouseleave)="zoomOut($event)"
-        (click)="zoomClick($event)"
-    >
-        Contacto
+    <a class="btn-nav" mat-button routerLink="/contact" routerLinkActive="active" (mouseenter)="zoomHover($event)"
+        (mouseleave)="zoomOut($event)" (click)="zoomClick($event)">
+        {{ 'NAVBAR.CONTACTO' | translate }}
     </a>
 
     @if (!authService.estaAutenticado()){
-        <a
-        class="btn-nav"
-        mat-button
-        routerLink="/login"
-        routerLinkActive="active"
-        (mouseenter)="zoomHover($event)"
-        (mouseleave)="zoomOut($event)"
-        (click)="zoomClick($event)"
-        >
-            Login
-        </a>
+    <a class="btn-nav" mat-button routerLink="/login" routerLinkActive="active" (mouseenter)="zoomHover($event)"
+        (mouseleave)="zoomOut($event)" (click)="zoomClick($event)">
+        {{ 'NAVBAR.LOGIN' | translate }}
+    </a>
     }
-    
+
     @if(authService.esAdmin()){
-        <a
-        class="btn-nav"
-        mat-button
-        routerLink="/admin"
-        routerLinkActive="active"
-        (mouseenter)="zoomHover($event)"
-        (mouseleave)="zoomOut($event)"
-        (click)="zoomClick($event)"
-    >
-        Admin
+    <a class="btn-nav" mat-button routerLink="/admin" routerLinkActive="active" (mouseenter)="zoomHover($event)"
+        (mouseleave)="zoomOut($event)" (click)="zoomClick($event)">
+        {{ 'NAVBAR.ADMIN' | translate }}
     </a>
 
-    <button
-        class="btn-nav"
-        mat-button
-        (click)="cerrarSesion(); zoomClick($event)"
-        (mouseenter)="zoomHover($event)"
-        (mouseleave)="zoomOut($event)"
-    >
-        Logout
+    <button class="btn-nav" mat-button (click)="cerrarSesion(); zoomClick($event)" (mouseenter)="zoomHover($event)"
+        (mouseleave)="zoomOut($event)">
+        {{ 'NAVBAR.LOGOUT' | translate }}
     </button>
     }
-    
 </mat-toolbar>

@@ -1,0 +1,78 @@
+{
+    "NAVBAR": {
+        "ESPANOL": "Spanish",
+        "ENGLISH": "English",
+        "ITALIANO": "Italian",
+        "MARCA": "My Portfolio",
+        "INICIO": "Home",
+        "SOBRE_MI": "About me",
+        "CONTACTO": "Contact",
+        "LOGIN": "Login",
+        "ADMIN": "Admin",
+        "LOGOUT": "Logout"
+    },
+    "FOOTER": {
+        "MARCA": "Andres Fernandez Exposito",
+        "TECNOLOGIAS": "Made with Angular and Material",
+        "GITHUB": "AndresFE0209"
+    },
+    "HOME": {
+        "NOMBRE": "Andres Fernandez Exposito",
+        "ROL": "FullStack Developer in training",
+        "BIENVENIDA": "Welcome to my portfolio. I am a DAM student and currently an intern at Plexus Tech, improving my skills step by step to keep advancing as a fullstack developer.",
+        "STACK": "Stack"
+    },
+    "ABOUT": {
+        "TITULO": "About Me",
+        "PRESENTACION": "I am Andres Fernandez Exposito, a student of Multiplatform Application Development and currently an intern at Plexus Tech. I consider myself a proactive worker, eager to learn. I am team-oriented, highly flexible, and able to take on new challenges.",
+        "VISADO": "VISA",
+        "ENTRADA_APROBADA": "ENTRY<br />APPROVED",
+        "VISADO_ENTRADA": "ENTRY VISA",
+        "ALT_FOTO": "Portrait of Andres Fernandez",
+        "FNAC": "BIRTH:",
+        "SEXO": "SEX:",
+        "PAIS": "COUNTRY:",
+        "EXP": "EXP:",
+        "NOMBRE": "NAME:",
+        "FORMACION": "Education",
+        "EXPERIENCIA": "Experience"
+    },
+    "CONTACT": {
+        "TITULO": "Portfolio Feedback",
+        "DESCRIPCION": "Leave your comment, suggestion or idea to improve the project.",
+        "NOMBRE_LABEL": "Name",
+        "NOMBRE_PLACEHOLDER": "Your name",
+        "ERROR_NOMBRE": "Name cannot be empty.",
+        "CORREO_LABEL": "Email",
+        "CORREO_PLACEHOLDER": "your@email.com",
+        "ERROR_CORREO": "Email cannot be empty.",
+        "CATEGORIA_LABEL": "Category",
+        "CATEGORIA_PLACEHOLDER": "Select a category",
+        "ERROR_CATEGORIA": "Category cannot be empty.",
+        "MENSAJE_LABEL": "Message",
+        "MENSAJE_PLACEHOLDER": "Write your comment here...",
+        "ERROR_MENSAJE": "Message cannot be empty.",
+        "BOTON_ENVIAR": "Send feedback",
+        "BOTON_ENVIANDO": "Sending...",
+        "EXITO": "Feedback sent successfully."
+    },
+    "LOGIN": {
+        "TITULO": "Admin Access",
+        "EMAIL_LABEL": "Email",
+        "EMAIL_PLACEHOLDER": "admin@email.com",
+        "PASSWORD_LABEL": "Password",
+        "PASSWORD_PLACEHOLDER": "Your password",
+        "ENTRAR": "Login",
+        "CARGANDO": "Loading..."
+    },
+    "ADMIN": {
+        "TITULO": "Admin Panel",
+        "DESCRIPCION": "Feedback received in real time",
+        "CONECTADO": "Connected",
+        "DESCONECTADO": "Disconnected",
+        "RECARGAR": "Reload",
+        "BUSCAR_PLACEHOLDER": "Search by user, email or category",
+        "CARGANDO": "Loading feedbacks...",
+        "NO_FEEDBACK": "No feedback yet."
+    }
+}

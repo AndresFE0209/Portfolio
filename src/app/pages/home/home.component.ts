@@ -2,10 +2,11 @@ import { AfterViewInit, Component } from '@angular/core';
 import { CardComponent } from '../../components/card/card.component';
 import { CommonModule } from '@angular/common';
 import { gsap } from 'gsap/gsap-core';
+import { TranslateModule } from '@ngx-translate/core';
 
 @Component({
   selector: 'app-home',
-  imports: [CommonModule, CardComponent],
+  imports: [CommonModule, CardComponent, TranslateModule],
   templateUrl: './home.component.html',
   styleUrl: './home.component.scss'
 })
