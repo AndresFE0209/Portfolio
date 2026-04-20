@@ -1,7 +1,8 @@
-import { Component } from '@angular/core';
+import { Component, inject } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
 import { NavbarComponent } from "./components/navbar/navbar.component";
 import { FooterComponent } from "./components/footer/footer.component";
+import { TranslateService } from '@ngx-translate/core';
 
 @Component({
   selector: 'app-root',
@@ -11,4 +12,10 @@ import { FooterComponent } from "./components/footer/footer.component";
 })
 export class AppComponent {
   title = 'portfolio';
+  private translate = inject(TranslateService);
+
+  ngOnInit(): void{
+    const savedLang = localStorage.getItem('lang') || 'es';
+    this.translate.use(savedLang);
+  }
 }
