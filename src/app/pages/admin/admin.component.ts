@@ -77,7 +77,7 @@ export class AdminComponent implements OnInit, OnDestroy {
     this.feedbackService.getFeedbacks().subscribe({
       next: (respuesta) => {
         this.feedbacks = respuesta.sort(
-          (a, b) => new Date(b.createdAt).getTime() - new Date(a.createdAt).getTime()
+          (a, b) => new Date(b.fechaCreacion).getTime() - new Date(a.fechaCreacion).getTime()
         );
         this.cargando = false;
       },

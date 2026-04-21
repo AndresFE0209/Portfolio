@@ -1,4 +1,4 @@
-.card-stack {
+.tarjeta-stack {
     min-height: 110px;
     display: flex;
     flex-direction: column;
@@ -26,7 +26,7 @@
     color: #f1e0b5;
 }
 
-.card-stack:hover {
+.tarjeta-stack:hover {
     filter: brightness(1.08);
     border-color: #c1a56c;
     background: linear-gradient(180deg, #4c5d37 0%, #37472a 100%);

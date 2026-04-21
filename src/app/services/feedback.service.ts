@@ -7,7 +7,7 @@ export interface FeedbackPayload {
   email: string;
   categoria: 'sugerencia' | 'error' | 'idea' | 'comentario';
   mensaje: string;
-  createdAt: string;
+  fechaCreacion: string;
 }
 
 export interface Feedback extends FeedbackPayload {
@@ -23,7 +23,7 @@ export class FeedbackService {
 
   constructor(private http: HttpClient) {}
 
-  createFeedback(payload: FeedbackPayload): Observable<Feedback> {
+  crearFeedback(payload: FeedbackPayload): Observable<Feedback> {
     return this.http.post<Feedback>(this.apiUrl, payload);
   }
 
@@ -31,7 +31,7 @@ export class FeedbackService {
     return this.http.get<Feedback[]>(this.apiUrl);
   }
 
-  getFeedbackById(id: number): Observable<Feedback> {
+  getFeedbackPorId(id: number): Observable<Feedback> {
     return this.http.get<Feedback>(`${this.apiUrl}/${id}`);
   }
 }

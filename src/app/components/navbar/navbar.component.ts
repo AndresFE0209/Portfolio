@@ -28,6 +28,7 @@ import { TranslateModule } from '@ngx-translate/core';
 export class NavbarComponent implements AfterViewInit, OnDestroy {
 
   public idiomaActual: string;
+  
   constructor(
     public authService: AuthService, 
     public translate: TranslateService

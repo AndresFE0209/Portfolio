@@ -65,10 +65,10 @@ export class ContactComponent {
       email: this.correo.trim(),
       categoria: this.categoria as CategoriaFeedback,
       mensaje: this.mensaje.trim(),
-      createdAt: new Date().toISOString()
+      fechaCreacion: new Date().toISOString()
     };
 
-    this.servicioFeedback.createFeedback(payload).subscribe({
+    this.servicioFeedback.crearFeedback(payload).subscribe({
       next: () => {
         this.enviando = false;
         this.enviado = true;

@@ -9,7 +9,7 @@ export interface FeedbackSocketMessage {
     email?: string;
     categoria?: string;
     mensaje?: string;
-    createdAt?: string;
+    fechaCreacion?: string;
   };
 }
 
