@@ -6,6 +6,28 @@
                 <p>
                     {{ 'ABOUT.PRESENTACION' | translate }}
                 </p>
+                <div class="datos-contacto destacado">
+                    <div class="linea">
+                        <span class="label">Email:</span>
+                        <span>andresfernandezexposito.91&#64;gmail.com</span>
+                    </div>
+                    <div class="linea">
+                        <span class="label">GitHub:</span>
+                        <span>
+                        <a href="https://github.com/AndresFE0209" target="_blank">AndresFE0209</a>
+                        </span>
+                    </div>
+                    <div class="linea">
+                        <span class="label">LinkedIn:</span>
+                        <span>
+                        <a href="https://www.linkedin.com/in/andres-fernandez-exposito-97696514a" target="_blank">andres-fernandez-exposito</a>
+                        </span>
+                    </div>
+                    <div class="linea">
+                        <span class="label">Teléfono:</span>
+                        <span>+34 663 490 668</span>
+                    </div>
+                </div>
             </td>
 
             <td class="columna-tarjeta">
@@ -20,7 +42,7 @@
                             [class.sellado]="sello">
                             <span class="sello-cuadro">
                                 <span class="marca-sellado">
-                                    <span class="marca-fecha">2026.04.21</span>
+                                    <span class="marca-fecha">{{fechaActual}}</span>
                                     <span class="marca-texto">{{ 'ABOUT.ENTRADA_APROBADA' | translate }}</span>
                                     <span class="marca-escudo" aria-hidden="true"></span>
                                 </span>

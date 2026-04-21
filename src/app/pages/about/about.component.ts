@@ -22,13 +22,15 @@ export class AboutComponent {
   sello = false;
   fotoVisible = false;
 
+  
+
   datos = {
     pais: 'ESPAÑA',
     nombre: 'Andres Fernandez',
     rol: 'FullStack Dev',
     id: 'W2M-ANG-0825',
-    nac: '1991-09-02',
-    exp: '2026-03-23'
+    nac: '02-09-1991',
+    exp: '23-03-2026'
   };
 
   formacion: CvItem[] = [
@@ -80,6 +82,14 @@ export class AboutComponent {
       entidad: item.empresa,
       detalle: item.detalle
     }));
+  }
+
+  get fechaActual(): string {
+    const hoy = new Date();
+    const año = hoy.getFullYear();
+    const mes = (hoy.getMonth() + 1).toString().padStart(2, '0');
+    const dia  = hoy.getDate().toString().padStart(2,'0');
+    return `${dia}.${mes}.${año}`;
   }
 
   onStampClick(event: Event): void {

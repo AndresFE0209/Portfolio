@@ -37,6 +37,29 @@
     letter-spacing: 1px;
 }
 
+.datos-contacto.destacado {
+    background: #232e3a;
+    border-radius: 8px;
+    padding: 16px 24px;
+    margin: 24px 0 16px 0;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.10);
+    border-left: 4px solid #1976d2;
+    color: #fff;
+
+    .label {
+        font-weight: bold;
+        margin-right: 8px;
+        color: #90caf9;
+    }
+    a {
+        color: #90caf9;
+        text-decoration: underline;
+    }
+    .linea {
+        margin-bottom: 8px;
+    }
+}
+
 .texto-presentacion p {
     margin: 0;
     max-width: 560px;
@@ -50,7 +73,9 @@
     width: 380px;
     padding: 0;
     vertical-align: top;
+    cursor: url('/assets/estampador.png') 64 64, pointer !important;
 }
+
 
 .tarjeta {
     width: 380px;
@@ -61,6 +86,7 @@
     background: #d8d0c8;
     color: #514646;
     box-shadow: 0 0 0 2px #8d837b inset, 0 14px 24px #00000055;
+    margin-top: 60px;
 }
 
 .tarjeta-top,
@@ -97,13 +123,13 @@
     align-items: center;
     gap: 8px;
     background: transparent !important;
-    cursor: pointer;
     user-select: none;
     outline: none;
     border: none !important;
     padding: 0 !important;
     min-width: 0 !important;
     transition: filter 0.15s ease;
+    cursor: url('/assets/estampador.png') 64 64, pointer !important;
 }
 
 .caja-sello.mat-mdc-outlined-button {
@@ -129,8 +155,18 @@
     filter: brightness(1.08);
 }
 
-.caja-sello:focus-visible {
-    box-shadow: 0 0 0 2px #5b7b3f66;
+.caja-sello:focus,
+.caja-sello:focus-visible,
+.caja-sello:active,
+.caja-sello.mat-mdc-outlined-button:focus,
+.caja-sello.mat-mdc-outlined-button:focus-visible,
+.caja-sello.mat-mdc-outlined-button:active {
+    background: transparent !important;
+  box-shadow: none !important;
+  outline: none !important;
+}
+.caja-sello .mat-mdc-button-focus-overlay {
+  background: transparent !important;
 }
 
 .sello-cuadro {
